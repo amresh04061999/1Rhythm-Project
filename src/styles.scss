@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+// link icon style
+@import "assets/icons/style.css";
+
+/* Importing Bootstrap SCSS file. */
+@import "assets/scss/base/index";
+@import "assets/scss/vandar/index";
+@import "assets/scss/componet/index";
+@import "assets/scss/layout/index";
+@import "assets/scss/utility/index";
