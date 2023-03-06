@@ -20,7 +20,8 @@ import { ManageProfilePresentationComponent } from './manage-profile-container/m
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
