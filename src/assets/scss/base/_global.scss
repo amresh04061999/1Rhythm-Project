@@ -1,15 +1,27 @@
+//  Fonts Family
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
 // Universal Style
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
+// body
 body {
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+
+}
+// button
+.btn-gradient{
+    background: linear-gradient(270.17deg, #2D6DD5 1.37%, #35B5C8 99.86%);
 }
