@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { HomeContainerComponent } from './home-container/home-container.component';
 import { HomePresentationComponent } from './home-container/home-presentation/home-presentation.component';
 import { ManageProfileContainerComponent } from './manage-profile-container/manage-profile-container.component';
@@ -19,6 +20,7 @@ import { ManageProfilePresentationComponent } from './manage-profile-container/m
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
