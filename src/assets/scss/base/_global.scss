@@ -23,6 +23,9 @@ body {
 .btn-gradient{
     background:$gradient;
 }
+.text-secondary-gray{
+  color:$text-muted
+}
 // import style ng-select
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
