@@ -7,7 +7,7 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 const routes: Routes = [
   {
     path: '', component: MasterComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',

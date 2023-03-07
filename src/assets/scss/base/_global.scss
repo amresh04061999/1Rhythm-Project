@@ -14,21 +14,19 @@ body {
     height: 100%;
     width: 100%;
 }
-
 // body
 body {
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
-
 }
 // button
 .btn-gradient{
-    background: linear-gradient(270.17deg, #2D6DD5 1.37%, #35B5C8 99.86%);
+    background:$gradient;
 }
+// import style ng-select
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
-
-// ng select dropdown
+// arrow down style
 .ng-select {
     .ng-arrow-wrapper {
       .ng-arrow {
@@ -39,6 +37,22 @@ body {
     }
   }
   
+  // hepler class
+    .fs-7{
+         font-size: 14px;
+    }
+  // Cancel X display none
+  .ng-select .ng-clear-wrapper{
+    display: none;
+  }
+  // ng Placeholder
+  .ng-select .ng-select-container .ng-value-container .ng-placeholder{
+    color:$gray;
+  }
+  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+    font-size: 0.9rem;
+  }
+ 
   .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
     border: 1px solid $primary;
     box-shadow: none;
@@ -57,43 +71,26 @@ body {
     }
   }
   
-  .ng-select.ng-select-disabled > .ng-select-container {
-    background-color: white;
-  }
-  
-  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
-    font-size: 0.9rem;
-  }
-  
-  .ng-select-country.ng-select {
-    .ng-arrow-wrapper {
-      .ng-arrow {
-        border-color: $gray transparent transparent;
-      }
-    }
-  }
-  
-  .ng-select-country.ng-select .ng-select-container .ng-value-container {
-    padding-left: 2px;
-  }
-  
-  .country-label {
-    height: 36px;
-  }
-  
-  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
-  .ng-dropdown-panel
-    .ng-dropdown-panel-items
-    .ng-option.ng-option-selected.ng-option-marked {
-    display: none;
-  }
-  
-  .ng-value.ng-value-disabled {
-    color: $gray;
-    font-size:10px;
-  }
-  
-  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
-    font-size: 10px;
-  }
-  
+  // scrollbar css
+ 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $gray; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:$gradient; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $secondary; 
+}

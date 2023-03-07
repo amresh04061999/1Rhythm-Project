@@ -1,10 +1,14 @@
 section{
     background-image: url('./../../../assets/images/background.png');
     background-repeat: no-repeat;
-    >img{
-        @media (max-width: 576px) {
-            width: 80px;
+   .Rhythm-image{
+        @media (max-width: 992px) {
+            width: 250px;
+            margin-top:50px;
             
+        }
+        @media (max-width: 576px) {
+            width:200px; 
         }
     }
     @media (max-width: 992px) {
@@ -12,13 +16,14 @@ section{
     }
    
     .registration-from-wrapper{
-        width: 650px;
+           width: 650px;
         @media (max-width: 992px) {
             width: 480px;
         }
         @media (max-width: 576px) {
-            width: 280px;
-            padding: 20px !important;
+            width: 300px;
+            height: 700px;  
+            overflow-y: scroll;
         }
     }
     form{
@@ -29,7 +34,7 @@ section{
         }
         .pluse-image{
             top: 75px;
-           right: 0;
+            right: 0;
         }
     }
 }
