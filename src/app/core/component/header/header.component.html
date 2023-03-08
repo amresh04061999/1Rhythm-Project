@@ -1,108 +1,79 @@
 <!-- start Header -->
 <header>
-  <div
-    class="d-flex justify-content-between align-items-center p-2 border border-bottom"
-  >
+  <div class="d-flex justify-content-between align-items-center p-2 border border-bottom">
     <!-- 1rhythm Logo -->
     <div class="logo ms-3">
-      <img
-        src="./../../../../assets/images/1Rhythm logo.svg"
-        alt="1Rhythm logo"
-      />
+      <img src="./../../../../assets/images/1Rhythm logo.svg" alt="1Rhythm logo" />
     </div>
     <!-- End 1rhythm Logo -->
 
     <!-- desktop -->
-    <div class="d-none d-lg-block">
+    <div class="d-none d-md-block">
       <ul class="nav">
         <li class="nav-item d-flex align-items-center">
-          <span>
-            <img src="./../../../../assets/images/home.svg" alt="home-icon" />
-          </span>
-          <a href="http://"
-            ><span class="nav-link fw-light ms-2 text-primary">Home</span></a
-          >
+          <img src="./../../../../assets/images/home.svg" alt="home-icon" />
+          <a href="http://"><span class="nav-link fw-light ms-0 text-primary">Home</span></a>
+        </li>
+        <li class="nav-item d-flex align-items-center ">
+          <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Studio</span></a>
+        </li>
+        <li class="nav-item d-flex align-items-center ">
+          <img src="./../../../../assets/images/noun-artist-1191144 1.svg" alt="Artist-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Artist</span></a>
         </li>
         <li class="nav-item d-flex align-items-center ms-4">
-          <span
-            ><img
-              src="./../../../../assets/images/Studio.svg"
-              alt="studio-icon"
-          /></span>
-          <a href="http://"
-            ><span class="nav-link fw-light ms-2">Studio</span></a
-          >
-        </li>
-        <li class="nav-item d-flex align-items-center ms-4">
-          <span
-            ><img
-              src="./../../../../assets/images/noun-artist-1191144 1.svg"
-              alt="Artist-icon"
-          /></span>
-          <a href="http://"
-            ><span class="nav-link fw-light ms-2">Artist</span></a
-          >
-        </li>
-        <li class="nav-item d-flex align-items-center ms-4">
-          <span
-            ><img
-              src="./../../../../assets/images/noun-calendar-2095603 4.svg"
-              alt="BookingHistory-icon"
-          /></span>
-          <a href="http://"
-            ><span class="nav-link fw-light ms-2">Booking History</span></a
-          >
+          <img src="./../../../../assets/images/noun-calendar-2095603 4.svg" alt="BookingHistory-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Booking History</span></a>
         </li>
       </ul>
     </div>
     <!-- Profile Image -->
-    <div class="profile-image overflow-hidden d-none d-lg-block me-3">
-      <img
-        src="./../../../../assets/images/Profile.png"
-        alt="profile-image"
-        class="w-100 h-auto"
-      />
+    <div class="profile-image overflow-hidden d-none d-md-block me-3">
+      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
     </div>
     <!-- desktop -->
     <!-- mobile -->
-    <label class="menu me-3 d-block d-lg-none" for="menuOpen">
-      <img src="./../../../../assets/images/menu.svg" alt="menu" />
+    <label class="opne me-3 d-md-none" for="menuOpen" [ngClass]=" none ?'d-none':'d-block'" (click)="open()">
+      <span class="icon-menu"></span>
+    </label>
+    <label class="close me-3 d-md-none" for="menuOpen" [ngClass]="block ?'d-none':'d-block'" (click)="close()">
+      <span class="icon-close"></span>
     </label>
   </div>
   <!-- End Header -->
-    <!-- mobile -->
-  <div class="text-white h-100">
+  <!-- mobile -->
+  <div class="text-white">
     <input type="checkbox" id="menuOpen" class="d-none" />
-    <aside class="sidebar bg-white h-25 w-100 d-flex justify-content-start align-items-center">
-        <ul class="d-block d-flex flex-column align-items-center ">
-           <!-- Profile Image -->
-    <div class="profile-image overflow-hidden mt-5">
-      <img
-        src="./../../../../assets/images/Profile.png"
-        alt="profile-image"
-        class="w-100 h-auto"
-      />
-    </div>
-             <li class="nav-item d-flex align-items-center text-white mt-4">
-                <span>
-                    <img src="./../../../../assets/images/home.svg" alt="home-icon">
-                </span>
-                <a href="http://"><span class="nav-link fw-light ms-2 text-primary ">Home</span></a>
-            </li>
-            <li class=" nav-item d-flex align-items-center mt-4">
-                <span><img src="./../../../../assets/images/Studio.svg" alt="studio-icon" ></span>
-                <a href="http://"><span class="nav-link fw-light  text-black">Studio</span></a>
-            </li>
-            <li class="nav-item d-flex align-items-center mt-4">
-                <span><img src="./../../../../assets/images/noun-artist-1191144 1.svg" alt="Artist-icon"></span>
-                <a href="http://"><span class="nav-link fw-light  text-black">Artist</span></a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-                <span><img src="./../../../../assets/images/noun-calendar-2095603 4.svg"
-                        alt="BookingHistory-icon"></span>
-                <a href="http://"><span class="nav-link fw-light text-black ">Booking History</span></a>
-            </li>
-        </ul>
+    <aside class="sidebar bg-white h-100 w-100">
+      <!-- Profile Image -->
+      <div class="d-flex align-items-center mt-4">
+        <div class="profile-image overflow-hidden ms-3 me-3">
+          <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
+        </div>
+        <h4 class="text-dark fs-7">Amresh Prasad</h4>
+      </div>
+      <!-- Profile Image -->
+      <!-- navigation -->
+      <ul class="nav d-flex flex-column ms-4 mt-3">
+        <li class="nav-item d-flex align-items-center">
+          <img src="./../../../../assets/images/home.svg" alt="home-icon" />
+          <a href="http://"><span class="nav-link fw-light text-primary ms-1">Home</span></a>
+        </li>
+        <li class="nav-item d-flex align-items-center ">
+          <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Studio</span></a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <img src="./../../../../assets/images/noun-artist-1191144 1.svg" alt="Artist-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Artist</span></a>
+        </li>
+        <li class="nav-item d-flex align-items-center ">
+          <img src="./../../../../assets/images/noun-calendar-2095603 4.svg" alt="BookingHistory-icon" />
+          <a href="http://"><span class="nav-link fw-light ">Booking History</span></a>
+        </li>
+      </ul>
+      <!-- navigation -->
     </aside>
   </div>
   <!-- mobile -->
