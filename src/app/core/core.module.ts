@@ -8,8 +8,6 @@ import { AuthGuard } from './services/auth/auth.guard';
 import { AuthService } from './services/auth/auth.service';
 import { LoaderService } from './services/loader/loader.service';
 
-
-
 @NgModule({
   declarations: [
     MasterComponent,
@@ -20,6 +18,7 @@ import { LoaderService } from './services/loader/loader.service';
     CommonModule,
     RouterModule
   ],
+  exports: [LoaderComponent,],
   providers: [AuthGuard, AuthService, LoaderService,]
 })
 export class CoreModule { }

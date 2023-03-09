@@ -26,6 +26,7 @@ header {
     position: absolute;
     transition: all 0.5s ease-in-out;
     left: 100%;
+    z-index: 100;
 }
 
 #menuOpen:checked+.sidebar {
