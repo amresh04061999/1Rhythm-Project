@@ -34,11 +34,8 @@
     </div>
     <!-- desktop -->
     <!-- mobile -->
-    <label class="opne me-3 d-md-none" for="menuOpen" [ngClass]=" none ?'d-none':'d-block'" (click)="open()">
-      <span class="icon-menu"></span>
-    </label>
-    <label class="close me-3 d-md-none" for="menuOpen" [ngClass]="block ?'d-none':'d-block'" (click)="close()">
-      <span class="icon-close"></span>
+    <label class="opne me-3 d-md-none" for="menuOpen" (click)="open()">
+      <span [ngClass]="isOpen ?'icon-menu':'icon-close'" ></span>
     </label>
   </div>
   <!-- End Header -->

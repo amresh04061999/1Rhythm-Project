@@ -18,3 +18,28 @@ $font-weight-lighter:400;
 $font-weight-light:500;
 $font-weight-bold:700;
 $font-weight-bolder:800;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1800px
+);
+// variables used for carousel
+$carousel-radius: 16px;
+$carousel-img-height: 300px;
+$carousel-content-width: 60%;
+$carousel-bag: linear-gradient(to right, $dark 60%, transparent);
+$user-name-gradient:-webkit-linear-gradient(right, #2D6DD5, #35B5C8);
+
+// profile image  in header
+$profile-image-width:50px;
+$profile-image-height:50px;
+$profile-image-Border-radius:50px;
+
+// header logo  in header
+$header-logo-image-width:150px;
+$header-logo-image-width-lg:100px;
+
