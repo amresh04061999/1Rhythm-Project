@@ -1,8 +1,6 @@
 section{
-    .bg-image{
-        background-image: url('./../../../assets/images/background.png');
-        background-repeat: no-repeat;
-    }
+    background-image: url('./../../../assets/images/background.png');
+    background-repeat: no-repeat;
    .Rhythm-image{
         @media (max-width: 992px) {
             width: 250px;

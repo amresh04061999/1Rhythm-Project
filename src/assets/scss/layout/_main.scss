@@ -1,38 +1,65 @@
 // Style of carousel
-.carousel-wrapper {
+main {
+  // Carousel style
+  .carousel-wrapper {
     border-radius: $carousel-radius;
     .picsum-img-wrapper {
-        height:$carousel-img-height;
+      height: $carousel-img-height;
       @media (max-width: 576px) {
-        height:$carousel-img-height-sm;
+        height: $carousel-img-height-sm;
       }
-        img {
-             object-fit: cover;
-        }
+      img {
+        object-fit: cover;
+      }
     }
     .text-wrapper {
       background: $carousel-bag;
       border-radius: $carousel-radius;
       width: $carousel-content-width;
-      .text-user-name{
+      .text-user-name {
         font-size: $carousel-text-user-name;
         @media (max-width: 576px) {
           font-size: $carousel-text-user-name-sm;
         }
-       
       }
       .user-name {
-        background:$user-name-gradient;
+        background: $user-name-gradient;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-stroke: 2.4px transparent;
         color: $dark;
       }
-      button{
+      button {
         @media (max-width: 576px) {
-          padding-left:$btn-padding-left-sm ;
+          padding-left: $btn-padding-left-sm;
           padding-right: $btn-padding-right-sm;
         }
       }
     }
+  }
+  .studio-wrapper {
+    background: $main-bg-gradient;
+    .container {
+      .card-main-wrapper{
+     
+        .row {
+          .card-wrapper {
+            .card {
+              .card-image {
+                width: $card-wrapper-image-width;
+                height: $card-wrapper-image-height;
+                @media (max-width: 576px) {
+                   width:100%;
+                }
+                @media (max-width: 768px) {
+                  width:100%;
+               }
+              }
+            }
+          }
+        }
+      }
+     
+    }
+  }
 }
