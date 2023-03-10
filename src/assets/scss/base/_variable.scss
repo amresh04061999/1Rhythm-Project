@@ -9,6 +9,8 @@ $input-btn-font-size: 15px;
 // button
 $btn-padding-y:8px;
 $btn-padding-x:50px;
+$btn-padding-left-sm:20px;
+$btn-padding-right-sm:20px;
 $btn-border-radius:3px;
 $btn-font-size:13px;
 
@@ -30,7 +32,10 @@ $container-max-widths: (
 // variables used for carousel
 $carousel-radius: 16px;
 $carousel-img-height: 300px;
+$carousel-img-height-sm: 200px;
 $carousel-content-width: 60%;
+$carousel-text-user-name:30px;
+$carousel-text-user-name-sm:18px;
 $carousel-bag: linear-gradient(to right, $dark 60%, transparent);
 $user-name-gradient:-webkit-linear-gradient(right, #2D6DD5, #35B5C8);
 
