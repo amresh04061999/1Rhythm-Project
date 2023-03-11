@@ -1,74 +1,252 @@
-<main>
+<main class="h-100 d-flex flex-column">
     <div class="container">
         <div class="row gx-0">
             <!-- Carousel starts here -->
             <ngb-carousel class="col carousel-wrapper overflow-hidden" [showNavigationArrows]="false" [interval]="6000">
-                
-               <!-- Displaying dynamic data using iteration -->
-               <ng-template ngbSlide>
-                <!-- Adding background image of caousel -->
-                <div class="picsum-img-wrapper position-relative">
-                    <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash 1.svg" class="h-100 w-100">
-                </div>
-                <!-- Text to display on carousel -->
-                <div class="text-wrapper position-absolute top-0 h-100  pt-3 pt-sm-5  ps-4 text-white">
-                    <div class="text-white pb-2 pt-sm-0">
-                        <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                <!-- Displaying dynamic data using iteration -->
+                <ng-template ngbSlide>
+                    <!-- Adding background image of caousel -->
+                    <div class="picsum-img-wrapper position-relative">
+                        <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash 1.svg"
+                            class="h-100 w-100" />
                     </div>
-                    <span class=" text-user-name text-uppercase fw-bold">Creative space
-                        <span class="text-uppercase user-name"> Studio</span>
+                    <!-- Text to display on carousel -->
+                    <div class="text-wrapper position-absolute top-0 h-100 pt-3 pt-sm-5 ps-4 text-white">
+                        <div class="text-white pb-2 pt-sm-0">
+                            <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                        </div>
+                        <span class="text-user-name text-uppercase fw-bold">Creative space
+                            <span class="text-uppercase user-name"> Studio</span>
                         </span>
-                    <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Iure dolorem cumque consequatur illum non quidem incidunt quasi.</div>
-                    <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
-                        <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap ">View Details</button>
+                        <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            dolorem cumque consequatur illum non quidem incidunt quasi.
+                        </div>
+                        <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
+                            <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap">
+                                View Details
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </ng-template>
-            <!-- Displaying dynamic data using iteration -->
-            <ng-template ngbSlide>
-                <!-- Adding background image of caousel -->
-                <div class="picsum-img-wrapper position-relative">
-                    <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-2.svg" class="h-100 w-100">
-                </div>
-                <!-- Text to display on carousel -->
-                <div class="text-wrapper position-absolute top-0 h-100  pt-3 pt-sm-5  ps-4 text-white">
-                    <div class="text-white pb-2 pt-sm-0">
-                        <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                </ng-template>
+                <!-- Displaying dynamic data using iteration -->
+                <ng-template ngbSlide>
+                    <!-- Adding background image of caousel -->
+                    <div class="picsum-img-wrapper position-relative">
+                        <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-2.svg"
+                            class="h-100 w-100" />
                     </div>
-                    <span class=" text-user-name text-uppercase fw-bold">Creative space
-                        <span class="text-uppercase user-name"> Studio</span>
+                    <!-- Text to display on carousel -->
+                    <div class="text-wrapper position-absolute top-0 h-100 pt-3 pt-sm-5 ps-4 text-white">
+                        <div class="text-white pb-2 pt-sm-0">
+                            <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                        </div>
+                        <span class="text-user-name text-uppercase fw-bold">Creative space
+                            <span class="text-uppercase user-name"> Studio</span>
                         </span>
-                    <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Iure dolorem cumque consequatur illum non quidem incidunt quasi.</div>
-                    <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
-                        <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap ">View Details</button>
+                        <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            dolorem cumque consequatur illum non quidem incidunt quasi.
+                        </div>
+                        <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
+                            <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap">
+                                View Details
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </ng-template>
-            <!-- Displaying dynamic data using iteration -->
-            <ng-template ngbSlide>
-                <!-- Adding background image of caousel -->
-                <div class="picsum-img-wrapper position-relative">
-                    <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-3.svg" class="h-100 w-100">
-                </div>
-                <!-- Text to display on carousel -->
-                <div class="text-wrapper position-absolute top-0 h-100  pt-3 pt-sm-5  ps-4 text-white">
-                    <div class="text-white pb-2 pt-sm-0">
-                        <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                </ng-template>
+                <!-- Displaying dynamic data using iteration -->
+                <ng-template ngbSlide>
+                    <!-- Adding background image of caousel -->
+                    <div class="picsum-img-wrapper position-relative">
+                        <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-3.svg"
+                            class="h-100 w-100" />
                     </div>
-                    <span class=" text-user-name text-uppercase fw-bold">Creative space
-                        <span class="text-uppercase user-name"> Studio</span>
+                    <!-- Text to display on carousel -->
+                    <div class="text-wrapper position-absolute top-0 h-100 pt-3 pt-sm-5 ps-4 text-white">
+                        <div class="text-white pb-2 pt-sm-0">
+                            <span class="text-uppercase text-secondary-gray fs-8">Most Popular</span>
+                        </div>
+                        <span class="text-user-name text-uppercase fw-bold">Creative space
+                            <span class="text-uppercase user-name"> Studio</span>
                         </span>
-                    <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Iure dolorem cumque consequatur illum non quidem incidunt quasi.</div>
-                    <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
-                        <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap ">View Details</button>
+                        <div class="w-75 text-description mt-3 text-secondary-gray d-none d-sm-block">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            dolorem cumque consequatur illum non quidem incidunt quasi.
+                        </div>
+                        <div class="button my-3 my-md-4 d-flex justify-content-start justify-content-sm-start">
+                            <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap">
+                                View Details
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </ng-template>
+                </ng-template>
             </ngb-carousel>
             <!-- End of carousel -->
         </div>
+    </div>
+    <!-- studio -->
+    <div class="studio-wrapper mt-5 flex-grow-1">
+        <!-- container -->
+        <div class="container h-100 d-flex flex-column">
+            <!-- header section -->
+            <div class="d-flex justify-content-between align-items-center pt-5">
+                <h3 class="fw-bold">Explore Studios</h3>
+                <a href="#" class="text-primary fw-bold">SEE ALL</a>
+            </div>
+            <!-- card main wrapper -->
+            <div class="card-main-wrapper mt-4 flex-grow-1">
+                <div class="row h-100 overflow-auto">
+                    <!-- card 1 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary  ">
+                            <!-- card -->
+                            <div class="card overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-1.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 1 -->
+                        <!-- card 2 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary ">
+                            <!-- card -->
+                            <div class="card overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-2.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 2 -->
+                        <!-- card 3 -->
+                    <div class="col-12  col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary ">
+                            <!-- card -->
+                            <div class="card  overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-3.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 3 -->
+                        <!-- card 4 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary ">
+                            <!-- card -->
+                            <div class="card overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-4.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 4 -->
+                        <!-- card 5 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary ">
+                            <!-- card -->
+                            <div class="card overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-5.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 5 -->
+                        <!-- card 6 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3">
+                        <!-- card-wrapper -->
+                        <div class="card-wrapper bg-primary p-3 bg-white rounded border border-secondary ">
+                            <!-- card -->
+                            <div class="card overflow-hidden">
+                                <!-- card image -->
+                                <div class="card-image overflow-hidden">
+                                    <img src="./../../../assets/images/Studio-2.svg" class="w-100 h-auto">
+                                </div>
+                                <!-- card text -->
+                                <div class="card-text my-2">
+                                    <h6>Magical Studio</h6>
+                                    <span class="text-secondary-gray">2097 Westheimer Rd. Santa ana, 0225052</span>
+                                </div>
+                                <!-- button -->
+                                <div class="button">
+                                    <button type="button" class="btn btn-outline-secondary fw-lighter w-100">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- end card 6 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Artist -->
+    <div>
+        
     </div>
 </main>
