@@ -1,0 +1,18 @@
+.row {
+    .card-wrapper {
+        .card {
+            .card-image {
+                width: $card-wrapper-image-width;
+                height: $card-wrapper-image-height;
+
+                @media (max-width: 576px) {
+                    width: 100%;
+                }
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

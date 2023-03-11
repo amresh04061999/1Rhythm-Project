@@ -12,6 +12,7 @@ import { BookingHistoryComponent } from './booking-history/booking-history.compo
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CardComponent]
 })
 export class SharedModule { }

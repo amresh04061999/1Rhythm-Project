@@ -9,6 +9,7 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 import { HomePresentationComponent } from './home-container/home-presentation/home-presentation.component';
 import { ManageProfileContainerComponent } from './manage-profile-container/manage-profile-container.component';
 import { ManageProfilePresentationComponent } from './manage-profile-container/manage-profile-presentation/manage-profile-presentation.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ManageProfilePresentationComponent } from './manage-profile-container/m
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
