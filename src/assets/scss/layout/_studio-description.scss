@@ -22,7 +22,7 @@ section {
             }
             .studio-small-image-wrapper {
                 width: 90px;
-                height: 90px;
+                height: 120px;
                 margin-right: 10px;
                 @media (max-width: 576px) {
                     width: 50px;
@@ -54,10 +54,3 @@ section {
    }
 
 }
-// .user-description-name {
-//     // background: $user-name-gradient1;
-//     background-clip: text;
-//     -webkit-background-clip: text;
-//     -webkit-text-stroke: 2.4px transparent;
-
-// }
