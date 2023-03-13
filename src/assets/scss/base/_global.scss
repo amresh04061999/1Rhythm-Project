@@ -26,6 +26,19 @@ body {
 .text-secondary-gray{
   color:$text-muted
 }
+.bg-secondary-gray{
+  background-color:rgba(13, 15, 20, 0.1);
+}
+.bg-primary-color{
+  background-color:lighten($color: $primary, $amount: 40);;
+}
+// hepler class
+.fs-7{
+  font-size: 14px;
+}
+.fs-8{
+font-size: 12px;
+}
 // import style ng-select
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
@@ -40,13 +53,7 @@ body {
     }
   }
   
-  // hepler class
-    .fs-7{
-         font-size: 14px;
-    }
-    .fs-8{
-      font-size: 12px;
- }
+  
   // Cancel X display none
   .ng-select .ng-clear-wrapper{
     display: none;
