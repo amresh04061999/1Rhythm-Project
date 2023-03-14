@@ -1,0 +1,20 @@
+.profile-menu-wrapper{
+     width: 250px;
+      height: 210px;
+      top: 60px;
+      right: 15px;
+      -webkit-box-shadow: 11px 10px 7px -8px rgba(0,0,0,0.75);
+       -moz-box-shadow: 11px 10px 7px -8px rgba(0,0,0,0.75);
+        box-shadow: 11px 10px 7px -8px rgba(0,0,0,0.75);
+
+    .profile-menu{
+       .nav{
+         &-item:hover{
+        background-color: rgba(219, 219, 219, 0.267);
+        border-radius: 5px;
+        
+         }
+       }
+    }
+  
+}

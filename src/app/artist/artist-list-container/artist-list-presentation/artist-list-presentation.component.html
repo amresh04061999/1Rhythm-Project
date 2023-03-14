@@ -1,0 +1,43 @@
+<!-- Artist list -->
+<section class="studio-list-wrapper d-flex flex-column h-100 p-2 p-sm-4">
+    <div class=" d-sm-flex align-items-center justify-content-between mb-3 w-100">
+        <h6 class="fw-bold fs-4 text-center ">All Artist</h6>
+        <!-- filter -->
+        <div class="filter-wrapper ">
+            <div class="row m-0 ">
+                <div class="col-12 col-sm-6">
+                    <div class="form-group mt-2 ">
+                        <ng-select placeholder="Instrumental Pl...">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <div class="form-group mt-2 ">
+                        <ng-select placeholder="State">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <div class="form-group mt-2 ">
+                        <ng-select placeholder="City">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Filter -->
+    </div>
+    <!-- artist card list -->
+    <div class="flex-grow-1 overflow-auto">
+        <div class="row m-0">
+            <!-- card-->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 my-3" *ngFor="let i of [1,2,3,4,5,6]">
+                <app-card></app-card>
+            </div>
+        </div>
+    </div>
+</section>

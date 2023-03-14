@@ -1,0 +1,141 @@
+<!-- Registration Form -->
+<section class="bg-image h-100 d-flex justify-content-around align-items-center">
+        <img src="./../../assets/images/1Rhythm_logo.png" alt="1Rhythm-image " class="img-fluid Rhythm-image " >   
+    <!-- right section Wrapper -->
+    <div class="bg-white registration-from-wrapper p-4 p-lg-5">
+        <h3 class="fw-bold">Create Your Account</h3>
+        <span class="mt-2 fs-7">Already Have a Account? <a href="" class="text-decoration-none fw-bold"> Sign In</a></span>
+        <!-- Registration from  -->
+        <form>
+            <!-- profile image select Section -->
+            <div class="row">
+                <div class="col-12 my-3 my-lg-4 ">
+                    <label for="select-image" class="position-relative cursor-pointer">
+                        <div class="profile-image overflow-hidden">
+                            <img src="./../../assets/images/registration-profile-vector.png" alt="vector-image"
+                                width="w-100 h-100">
+                        </div>
+                        <img src="./../../assets/images/pluse-image.png" alt="pluse-image"
+                            class="pluse-image position-absolute">
+                        <input type="file" id="select-image" class="d-none">
+                    </label>
+                </div>
+            </div>
+            <!-- End profile image select Section -->
+            <!-- First Row -->
+            <div class="row">
+                <!-- FirstName -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="FirstName" class="fw-bold ">First Name <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="FirstName" placeholder="First Name">
+                    </div>
+                </div>
+                <!-- End  FirstName -->
+                <!-- Lastname -->
+                <div class="col-12  col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="LastName" class="fw-bold ">Last Name <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="LastName" placeholder="Last Name">
+                    </div>
+                </div>
+                <!-- End lastName -->
+            </div>
+            <!-- End First Row -->
+            <!-- Second Row -->
+            <div class="row">
+                <!-- Email ID -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="EmailID" class="fw-bold ">Email Id<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="EmailID" placeholder="Email ID">
+                    </div>
+                </div>
+                <!-- End  Email ID -->
+                <!-- Password -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="Password" class="fw-bold ">Password <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="Password" placeholder="Password">
+                    </div>
+                </div>
+                <!-- End Password -->
+            </div>
+            <!-- End Second Row -->
+
+            <!-- Third Row -->
+            <div class="row">
+                <!-- Phone Number -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="PhoneNumber" class="fw-bold ">Phone Number<span class="text-danger">
+                                *</span></label>
+                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number">
+                    </div>
+                </div>
+                <!-- End Phone Number -->
+                <!-- userType -->
+                <div class="col-12 col-sm-6">
+                    <div class="form-group mt-3">
+                        <label for="Password" class="fw-bold ">Select User Type <span class="text-danger">
+                                *</span></label>
+                        <ng-select placeholder="Select UserType">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <!-- End userType -->
+            </div>
+            <!-- End Third Row -->
+
+            <!-- Four  Row -->
+            <div class="row">
+                <!-- Select Country -->
+                <div class="col-12 col-sm-12">
+                    <div class="form-group mt-3">
+                        <label for="Country" class="fw-bold ">Select Country<span class="text-danger"> *</span></label>
+                        <ng-select placeholder="india">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <!-- End Select Country  -->
+                <!-- Select State -->
+                <div class="col-6 col-sm-6">
+                    <div class="form-group mt-3">
+                                <div class="form-group mt-3">
+                                    <label for="state" class="fw-bold ">Select State<span class="text-danger"> *</span></label>
+                                    <ng-select placeholder="Select State">
+                                        <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                                    </ng-select>
+                                </div>
+                    </div>
+                </div>
+                <!-- End State -->
+                <!-- Select City -->
+                <div class="col-6 col-sm-6">
+                    <div class="form-group mt-3">
+                                <div class="form-group mt-3">
+                                    <label for="City" class="fw-bold ">Select City<span class="text-danger"> *</span></label>
+                                    <ng-select placeholder="Select City" >
+                                        <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                                    </ng-select>
+                                </div>
+                    </div>
+                </div>
+                <!-- End City -->
+            </div>
+            <!-- End Four Row -->
+            <!-- status section -->
+            <div class="row">
+                <div class="col-12 mt-4 mt-lg-5">
+                   <span class="fw-bold d-flex align-items-center">Note: <span class="fw-lighter fs-7 ms-1"> Please Add Your studion Information In the Manage  </span></span> 
+                </div>
+            </div>
+            <div class="button my-5 my-lg-3 d-flex justify-content-center justify-content-sm-start">
+                <button type="submit" class="btn btn-primary btn-gradient border-0 ">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- End  Registration Form -->
