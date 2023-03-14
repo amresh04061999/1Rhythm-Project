@@ -14,6 +14,8 @@ import { BookingDetailsPresentationComponent } from './booking-details-container
 import { ManageArtistProfileContainerComponent } from './manage-artist-profile-container/manage-artist-profile-container.component';
 import { ManageArtistProfilePresentationComponent } from './manage-artist-profile-container/manage-artist-profile-presentation/manage-artist-profile-presentation.component';
 import { ViewMoreInformationPopupComponent } from './view-more-information-popup/view-more-information-popup.component';
+import { SharedModule } from '../shared/shared.module';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { ViewMoreInformationPopupComponent } from './view-more-information-popup
   ],
   imports: [
     CommonModule,
-    ArtistRoutingModule
+    ArtistRoutingModule,
+    SharedModule,
+    NgSelectModule
   ]
 })
 export class ArtistModule { }
