@@ -1,7 +1,5 @@
 //  Fonts Family
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
-
-
 // Universal Style
 * {
     padding: 0;
@@ -19,7 +17,8 @@ body {
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
 }
-// button
+
+// helper class
 .btn-gradient{
     background:$gradient;
 }
@@ -42,6 +41,8 @@ font-size: 12px;
 .cursor-pointer{
  cursor: pointer;
 }
+
+
 // import style ng-select
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
@@ -55,7 +56,6 @@ font-size: 12px;
       }
     }
   }
-  
   
   // Cancel X display none
   .ng-select .ng-clear-wrapper{

@@ -7,18 +7,22 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AuthService } from './services/auth/auth.service';
 import { LoaderService } from './services/loader/loader.service';
-
+import {OverlayModule} from '@angular/cdk/overlay';
+import { ProfileMenuComponent } from './component/profile-menu/profile-menu.component';
+import { OverlayService } from './services/overlay/overlay.service';
 @NgModule({
   declarations: [
     MasterComponent,
     HeaderComponent,
-    LoaderComponent
+    LoaderComponent,
+    ProfileMenuComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    OverlayModule
   ],
   exports: [LoaderComponent,],
-  providers: [AuthGuard, AuthService, LoaderService,]
+  providers: [AuthGuard, AuthService, LoaderService,OverlayService]
 })
 export class CoreModule { }

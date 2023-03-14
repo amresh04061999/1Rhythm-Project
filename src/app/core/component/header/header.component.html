@@ -10,7 +10,7 @@
     <!-- desktop -->
     <div class="d-none d-md-block cursor-pointer">
       <ul class="nav">
-        <li class="nav-item d-flex align-items-center">
+        <li class="nav-item d-flex align-items-center  ">
           <img src="./../../../../assets/images/home.svg" alt="home-icon" />
           <a href="http://"><span class="nav-link fw-light ms-0 text-primary">Home</span></a>
         </li>
@@ -30,7 +30,7 @@
     </div>
     <!-- Profile Image -->
     <div class="profile-image overflow-hidden d-none d-md-block me-3 cursor-pointer">
-      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
+      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" (click)="OpenProfileMenu()" />
     </div>
     <!-- desktop -->
     <!-- mobile -->
@@ -39,6 +39,9 @@
     </label>
   </div>
   <!-- End Header -->
+
+
+  
   <!-- mobile -->
   <div class="text-white">
     <input type="checkbox" id="menuOpen" class="d-none" />
