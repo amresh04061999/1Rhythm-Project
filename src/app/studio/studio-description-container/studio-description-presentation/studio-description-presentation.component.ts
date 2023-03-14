@@ -11,7 +11,8 @@ export class StudioDescriptionPresentationComponent {
   constructor(private _overlaySevices:OverlayService){
   }
    public bookStudio(){
-    this._overlaySevices.open(StudioBookingFormContainerComponent)
+    this._overlaySevices.open(StudioBookingFormContainerComponent,true)
+
    }
 
 }

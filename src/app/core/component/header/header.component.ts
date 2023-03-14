@@ -17,8 +17,7 @@ export class HeaderComponent {
   }
 // Open Profile menu
   public OpenProfileMenu():void{
-   this._overlaySevices.open(ProfileMenuComponent);
-   
+    this._overlaySevices.open(ProfileMenuComponent,false);
   }
  
 }

@@ -1,0 +1,18 @@
+.studio-book-form-wrapper{
+    @media (max-width:576px){
+       height: 100% !important;
+    //    width: 50%;
+    }
+    @media (min-width:576px){
+        width: 60%;
+    }
+    @media (min-width:768px){
+        width: 40%;
+    }
+    @media (min-width:992px){
+        width: 40%;
+    }
+    @media (min-width:1240px){
+        width: 25%;
+    }
+}

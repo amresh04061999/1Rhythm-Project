@@ -41,8 +41,6 @@ font-size: 12px;
 .cursor-pointer{
  cursor: pointer;
 }
-
-
 // import style ng-select
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
@@ -110,3 +108,15 @@ font-size: 12px;
 ::-webkit-scrollbar-thumb:hover {
   background: $secondary; 
 }
+// cdk overlay style
+// Overlay backdrop styling
+.overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+// Overlay panel styling
+// .overlay-panel {
+//   display: flex;
+//   flex-direction: column;
+//   background-color: #ffffff;
+//   padding: 20px;
+// }
