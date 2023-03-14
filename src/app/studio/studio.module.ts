@@ -13,6 +13,8 @@ import { BookingDetailsContainerComponent } from './booking-details-container/bo
 import { BookingDetailsPresentationComponent } from './booking-details-container/booking-details-presentation/booking-details-presentation.component';
 import { ManageStudioProfileContainerComponent } from './manage-studio-profile-container/manage-studio-profile-container.component';
 import { ManageStudioProfilePresentationComponent } from './manage-studio-profile-container/manage-studio-profile-presentation/manage-studio-profile-presentation.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ManageStudioProfilePresentationComponent } from './manage-studio-profil
   ],
   imports: [
     CommonModule,
-    StudioRoutingModule
+    StudioRoutingModule,
+    NgSelectModule,
+    SharedModule
   ]
 })
 export class StudioModule { }

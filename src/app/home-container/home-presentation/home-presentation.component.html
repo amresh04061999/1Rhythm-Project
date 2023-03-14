@@ -94,11 +94,15 @@
             <!-- header section -->
             <div class="d-flex justify-content-between align-items-center pt-4">
                 <h3 class="fw-bold">Explore Studios</h3>
-                <a href="#" class="text-primary fw-bold">SEE ALL</a>
+                <a class="text-primary fw-bold" routerLink="/studio/studio-list">SEE ALL</a>
             </div>
             <!-- card main wrapper -->
-            <div class="card-main-wrapper my-2">
-                <app-card></app-card>
+            <div class="row  ">
+                <!-- card 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3" *ngFor="let i of [1,2,3,4,5,6]">
+                    <app-card></app-card>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -113,8 +117,12 @@
                 <a href="#" class="text-primary fw-bold">SEE ALL</a>
             </div>
             <!-- card main wrapper -->
-            <div class="card-main-wrapper my-3">
-                <app-card></app-card>
+            <div class="row  ">
+                <!-- card 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 mt-3" *ngFor="let i of [1,2,3,4,5,6]">
+                    <app-card></app-card>
+                </div>
+                
             </div>
         </div>
     </div>
