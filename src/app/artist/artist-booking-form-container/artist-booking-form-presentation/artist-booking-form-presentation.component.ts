@@ -8,14 +8,17 @@ import { OverlayService } from 'src/app/core/services/overlay/overlay.service';
 })
 export class ArtistBookingFormPresentationComponent {
   public userTypes=[
-    { id:1,name:'General User'},
-    { id:2,name:'Studio Owner'},
-    { id:3,name:'Artist'}
+    { id:1,name:'Event'},
+    { id:2,name:'Class'},
     ]
+    public  showInputBox:string;
     constructor(private _overlayService:OverlayService){
-
+     this.showInputBox='';
     }
     public closeForm():void{
             this._overlayService.close()
+    }
+    public selectBookArtistFor(event:any):void{
+      this.showInputBox=event;
     }
 }

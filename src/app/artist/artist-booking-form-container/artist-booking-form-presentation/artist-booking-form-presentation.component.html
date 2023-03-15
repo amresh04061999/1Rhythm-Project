@@ -9,7 +9,8 @@
     </div>
     <form class="flex-grow-1">
         <div class="h-100 d-flex flex-column align-items-center justify-content-between">
-            <div class="row  m-auto">
+            <div class="wrapper-form">
+            <div class="row m-auto">
                 <!-- fullname -->
                 <div class="col-12">
                     <div class="form-group mt-3 mt-sm-4">
@@ -30,14 +31,20 @@
                     <div class="form-group mt-3">
                         <label for="Select" class="fw-bold ">Book Artist For <span class="text-danger">
                                 *</span></label>
-                        <ng-select placeholder="Book Artist For">
-                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        <ng-select placeholder="Book Artist For" bindValue="name"
+                            (change)="selectBookArtistFor($event)">
+                            <ng-option *ngFor="let user of userTypes " [value]="user.name">{{user.name}}</ng-option>
                         </ng-select>
                     </div>
                 </div>
+                <!--Event-->
+            </div>
+           <div class="border mt-3"></div>
+            <div [ngClass]=" showInputBox =='Class' ? 'd-none':''" >
+                <div class="row m-auto">
                 <!-- PerformaceType -->
                 <div class="col-12">
-                    <div class="form-group mt-3 ">
+                    <div class="form-group mt-3">
                         <label for="PerformaceType" class="fw-bold ">Performace Type <span class="text-danger">
                                 *</span></label>
                         <input type="text" class="form-control" id="PerformaceType" placeholder="Performace Type">
@@ -87,6 +94,47 @@
                     </div>
                 </div>
             </div>
+        </div>
+            <div [ngClass]="showInputBox =='' || showInputBox =='Event' ? 'd-none':''" >
+                <!--end Event-->
+                <!-- Class -->
+                <div  class="row m-auto">
+                    <!-- Class Type -->
+                    <div class="col-12">
+                        <div class="form-group mt-3">
+                            <label for="ClassType" class="fw-bold ">Class Type <span class="text-danger">
+                                    *</span></label>
+                            <input type="text" class="form-control" id="ClassType" placeholder="Class Typee">
+                        </div>
+                    </div>
+                    <!-- Date -->
+                    <div class="col-12">
+                        <div class="form-group mt-3 ">
+                            <label for="date" class="fw-bold ">Select Date <span class="text-danger">
+                                    *</span></label>
+                            <input type="Date" class="form-control" id="date" placeholder="Class Typee">
+                        </div>
+                    </div>
+                    <!--Additional Requirements  -->
+                    <div class="col-12 ">
+                        <div class="mt-3">
+                            <label for="s" class="fw-bold ">Additional Requirements <span class="text-danger">
+                                    *</span></label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-12 ">
+                        <div class="mt-3">
+                            <label for="classaddress" class="fw-bold ">Class Address <span class="text-danger">
+                                    *</span></label>
+                            <textarea class="form-control" id="classaddress" rows="3"
+                                placeholder="2972 Westheimer Rd. Santa Ana, Illinois 85486, bangaluru, Karnataka"
+                                readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
             <!-- submit and Cancel button -->
             <div class="button my-5 my-lg-3 d-flex justify-content-center ">
                 <button type="button" class="btn btn-outline-info me-2 me-sm-3">Cancel</button>
