@@ -1,8 +1,19 @@
 .studio-book-form-wrapper{
-    @media (max-width:576px){
-       height: 100% !important;
-    //    width: 50%;
+    .header{
+        h3{
+            @media (max-width:576px){
+                font-size: 16px ;
+             }
+        } 
     }
+    @media (max-width:576px){
+       height: 60% !important;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }   
     @media (min-width:576px){
         width: 60%;
     }

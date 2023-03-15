@@ -1,18 +1,17 @@
 <!-- start Header -->
-<header>
+<header class="h-100  overflow-hidden">
   <div class="d-flex justify-content-between align-items-center p-2 ">
     <!-- 1rhythm Logo -->
     <div class="logo ms-3 cursor-pointer">
       <img src="./../../../../assets/images/1Rhythm logo.svg" alt="1Rhythm logo" />
     </div>
     <!-- End 1rhythm Logo -->
-
     <!-- desktop -->
     <div class="d-none d-md-block cursor-pointer">
       <ul class="nav">
         <li class="nav-item d-flex align-items-center  ">
           <img src="./../../../../assets/images/home.svg" alt="home-icon" />
-          <a href="http://"><span class="nav-link fw-light ms-0 text-primary">Home</span></a>
+          <a><span class="nav-link fw-light ms-0 text-primary" routerLink="/">Home</span></a>
         </li>
         <li class="nav-item d-flex align-items-center ">
           <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
@@ -40,12 +39,10 @@
   </div>
   <!-- End Header -->
 
-
-  
   <!-- mobile -->
-  <div class="text-white">
+  <div class="text-white border">
     <input type="checkbox" id="menuOpen" class="d-none" />
-    <aside class="sidebar bg-white h-100 w-100">
+    <aside class="sidebar bg-white w-100">
       <!-- Profile Image -->
       <div class="d-flex align-items-center mt-4">
         <div class="profile-image overflow-hidden ms-3 me-3">
