@@ -1,1 +1,98 @@
-<p>artist-booking-form-presentation works!</p>
+<!-- Artist-booking-form -->
+<div class="form-wrapper d-flex flex-column bg-white position-absolute h-100 end-0 p-2 p-sm-4 overflow-auto">
+    <div class="header">
+        <div class="d-flex align-items-center justify-content-between">
+            <h3>Book Now</h3>
+            <span class="icon-close cursor-pointer fw-bold" (click)="closeForm()"></span>
+        </div>
+        <span class="fs-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+    </div>
+    <form class="flex-grow-1">
+        <div class="h-100 d-flex flex-column align-items-center justify-content-between">
+            <div class="row  m-auto">
+                <!-- fullname -->
+                <div class="col-12">
+                    <div class="form-group mt-3 mt-sm-4">
+                        <label for="FullName" class="fw-bold ">FullName <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="FullName" placeholder="FullName">
+                    </div>
+                </div>
+                <!-- phone number -->
+                <div class="col-12">
+                    <div class="form-group mt-3">
+                        <label for="PhoneNumber" class="fw-bold ">Phone Number <span class="text-danger">
+                                *</span></label>
+                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number">
+                    </div>
+                </div>
+                <!-- Book Artist For -->
+                <div class="col-12">
+                    <div class="form-group mt-3">
+                        <label for="Select" class="fw-bold ">Book Artist For <span class="text-danger">
+                                *</span></label>
+                        <ng-select placeholder="Book Artist For">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <!-- PerformaceType -->
+                <div class="col-12">
+                    <div class="form-group mt-3 ">
+                        <label for="PerformaceType" class="fw-bold ">Performace Type <span class="text-danger">
+                                *</span></label>
+                        <input type="text" class="form-control" id="PerformaceType" placeholder="Performace Type">
+                    </div>
+                </div>
+                <!-- Date number -->
+                <div class="col-12">
+                    <div class="form-group mt-3">
+                        <label for="date" class="fw-bold ">Select Date<span class="text-danger"> *</span></label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+                <!-- From -->
+                <label for="Select" class="fw-bold mt-3">Select Duration <span class="text-danger">
+                        *</span></label>
+                <div class="col-6">
+                    <div class="form-group ">
+                        <label for="Select" class="fw-bold ">From </label>
+                        <ng-select placeholder="From">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <!-- To -->
+                <div class="col-6">
+                    <div class="form-group ">
+                        <label for="Select" class="fw-bold ">To</label>
+                        <ng-select placeholder="To">
+                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{user.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <!--Additional Requirements  -->
+                <div class="col-12 ">
+                    <div class="mt-3">
+                        <label for="s" class="fw-bold ">Venue Address <span class="text-danger">
+                                *</span></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <!--Additional Requirements  -->
+                <div class="col-12 ">
+                    <div class="mt-3">
+                        <label for="s" class="fw-bold ">Additional Requirements <span class="text-danger">
+                                *</span></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- submit and Cancel button -->
+            <div class="button my-5 my-lg-3 d-flex justify-content-center ">
+                <button type="button" class="btn btn-outline-info me-2 me-sm-3">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap ">Book Now</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--End  Artist-booking-form -->

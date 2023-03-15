@@ -10,6 +10,7 @@ import { HomePresentationComponent } from './home-container/home-presentation/ho
 import { ManageProfileContainerComponent } from './manage-profile-container/manage-profile-container.component';
 import { ManageProfilePresentationComponent } from './manage-profile-container/manage-profile-presentation/manage-profile-presentation.component';
 import { SharedModule } from './shared/shared.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SharedModule } from './shared/shared.module';
     HomeContainerComponent,
     HomePresentationComponent,
     ManageProfileContainerComponent,
-    ManageProfilePresentationComponent
+    ManageProfilePresentationComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
