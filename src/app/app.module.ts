@@ -9,8 +9,9 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 import { HomePresentationComponent } from './home-container/home-presentation/home-presentation.component';
 import { ManageProfileContainerComponent } from './manage-profile-container/manage-profile-container.component';
 import { ManageProfilePresentationComponent } from './manage-profile-container/manage-profile-presentation/manage-profile-presentation.component';
-import { SharedModule } from './shared/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
+    CoreModule,
     SharedModule,
-    CoreModule
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

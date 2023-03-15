@@ -1,1 +1,128 @@
-<p>manage-profile-presentation works!</p>
+<!-- manage-profile -->
+<div class="manage-profile-wrapper h-100 p-4 overflow-auto">
+    <h4 class="mb-4">Manage Profile</h4>
+    <form>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="profile-image-main-wrapper border p-4">
+                    <h5>Profile Image</h5>
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-5">
+                        <div
+                            class="profile-image-outer border d-flex justify-content-center align-items-center border-primary">
+                            <div class="profile-image-inner border border-secondary overflow-hidden">
+                                <img src="./../../../assets/images/profile-image.svg" alt="Profile-image"
+                                    class="h-100 w-auto" />
+                            </div>
+                        </div>
+                        <label for="change-image"
+                            class="border border-secondary text-secondary rounded fw-bold p-1 p-sm-3 px-3 px-sm-5 mt-3 mt-sm-5">
+                            Change Profile Image
+                        </label>
+                        <input type="file" id="change-image" class="d-none" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  col-md-6 col-lg-8 ">
+                <div class="border p-4 mt-3 mt-md-0">
+                    <h5>Profile details</h5>
+                        <!-- First Row -->
+                        <div class="row">
+                            <!-- FirstName -->
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mt-3">
+                                    <label for="FirstName" class="fw-bold">First Name <span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" class="form-control" id="FirstName" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <!-- End  FirstName -->
+                            <!-- Lastname -->
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mt-3">
+                                    <label for="LastName" class="fw-bold">Last Name <span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" class="form-control" id="LastName" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <!-- End lastName -->
+                        </div>
+                        <!-- Second Row -->
+                        <div class="row">
+                            <!-- Email ID -->
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mt-3">
+                                    <label for="EmailID" class="fw-bold">Email Id<span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" class="form-control" id="EmailID" placeholder="Email ID" />
+                                </div>
+                            </div>
+                            <!-- End  Email ID -->
+                            <!-- Password -->
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mt-3">
+                                    <label for="Password" class="fw-bold">Password <span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" class="form-control" id="Password" placeholder="Password" />
+                                </div>
+                            </div>
+                            <!-- End Password -->
+                        </div>
+                        <!-- End Second Row -->
+
+                        <!-- Third Row -->
+                        <div class="row">
+                            <!-- Phone Number -->
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group mt-3">
+                                    <label for="PhoneNumber" class="fw-bold">Phone Number<span class="text-danger">
+                                            *</span></label>
+                                    <input type="text" class="form-control" id="PhoneNumber"
+                                        placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="row">
+                                    <!-- Select State -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="form-group mt-3">
+                                            <div class="form-group mt-3">
+                                                <label for="state" class="fw-bold">Select State<span
+                                                        class="text-danger">
+                                                        *</span></label>
+                                                <ng-select placeholder="Select State">
+                                                    <ng-option *ngFor="let user of userTypes" [value]="user.id">{{
+                                                        user.name }}</ng-option>
+                                                </ng-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End State -->
+                                    <!-- Select City -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="form-group mt-3">
+                                            <div class="form-group mt-3">
+                                                <label for="City" class="fw-bold">Select City<span class="text-danger">
+                                                        *</span></label>
+                                                <ng-select placeholder="Select City">
+                                                    <ng-option *ngFor="let user of userTypes" [value]="user.id">{{
+                                                        user.name }}</ng-option>
+                                                </ng-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End City -->
+                                </div>
+                            </div>
+                            <!-- End Phone Number -->
+                        </div>
+                        <!-- End Third Row -->
+                         <!-- submit and Cancel button -->
+                  <div class="button my-5 my-lg-3 d-flex justify-content-end ">
+                     <button type="button" class="btn btn-outline-info me-3">Cancel</button>
+                      <button type="submit" class="btn btn-primary btn-gradient border-0 text-nowrap ">Book Now</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

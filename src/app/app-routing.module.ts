@@ -1,8 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ManageArtistProfileContainerComponent } from './artist/manage-artist-profile-container/manage-artist-profile-container.component';
 import { MasterComponent } from './core/component/master/master.component';
 import { AuthGuard } from './core/services/auth/auth.guard';
 import { HomeContainerComponent } from './home-container/home-container.component';
+import { ManageProfileContainerComponent } from './manage-profile-container/manage-profile-container.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -17,6 +19,9 @@ const routes: Routes = [
       },
       {
         path: 'home', component: HomeContainerComponent
+      },
+      {
+        path: 'manage-profile', component: ManageProfileContainerComponent
       },
       { path: 'artist', loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule) },
       { path: 'studio', loadChildren: () => import('./studio/studio.module').then(m => m.StudioModule) }

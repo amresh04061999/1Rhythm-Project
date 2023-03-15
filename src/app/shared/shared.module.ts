@@ -15,7 +15,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
   imports: [
     CommonModule,
     RouterModule,
-    NgSelectModule
   ],
   exports: [CardComponent]
 })
