@@ -1,0 +1,19 @@
+section{
+    background: $main-bg-gradient;
+    .book-title{
+    
+    @media(min-width:576px){
+        font-size: 16px;
+    }
+    }
+.book-date{
+    @media(min-width:576px){
+        font-size: 16px;
+    }
+}
+.book-status{
+    @media(min-width:576px){
+        font-size: 16px;
+    }
+}
+}
