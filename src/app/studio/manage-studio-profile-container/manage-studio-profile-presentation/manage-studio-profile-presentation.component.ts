@@ -20,6 +20,8 @@ export class ManageStudioProfilePresentationComponent {
 
   }
   public checkBox(event: any): void {
+    console.log(event);
+
     this.checkValue = event.target.id;
     this.checkValue1 = event.target.checked;
   }
