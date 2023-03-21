@@ -1,0 +1,53 @@
+.manage-studio-wrapper {
+    .row{
+        .Select-image-wrapper{
+            height: 300px;
+            border: 2px dashed $primary;
+            background-color: lighten($color:$gray, $amount:25.5);
+        }
+        .image-wraperr{
+            width: 100%;
+            height: 150px;
+            img{
+                object-fit: cover;
+            }
+            .set-delete-like-wrapper{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.4s opacity ease-in-out, color 0.4s ease-in-out;
+                z-index: -1;
+            }
+            .svg-heart{
+              visibility: hidden;
+              opacity: 0;
+              transition: all 0.3s linear;
+            }
+            &:hover {
+                  .set-delete-like-wrapper {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 100;
+                  }
+                
+              }
+        }
+            input[type="radio"]:checked {
+                &~.set-delete-like-wrapper{
+                  .action-btn{
+                      display: none;
+                    }
+                    
+                }
+               & ~ .svg-heart{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            }
+        }

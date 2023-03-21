@@ -1,16 +1,120 @@
-<div class="h-100 p-4 overflow-auto">
+<div class="manage-studio-wrapper h-100 p-3 p-sm-4 overflow-auto">
     <h5>Manage Studio Profile</h5>
     <form action="">
         <div class="row">
-            <div class="col-12 col-sm-4 mt-4">
-                <div class="border p-4">
-                    <h6 class="fw-bold">Add Studio Images</h6>
-                    <div></div>
+            <div class="col-12 col-md-4 mt-4">
+                <div class="border p-2 p-sm-4">
+                    <h6 class="fw-bold my-3">Add Artist Images</h6>
+                    <!-- Select multple image using ngx-dropzone -->
+                    <div class=" Select-image-wrapper custom-dropzone" ngx-dropzone
+                        accept="image/jpeg,image/jpg,image/png,image/gif">
+                        <ngx-dropzone-label for="uploadimage">
+                            <div class="d-flex flex-column align-items-center">
+                                <img class="mb-4" src="../../../assets/images/uploadImageIcon.png"
+                                    alt="select-image-icon">
+                                <span class="text-gray">
+                                    <span class="text-primary">Upload Image</span>
+                                    Or Just Drag And Drop</span>
+                                <span class="fs-7 text-gray">+ Add 5 Images</span>
+
+                            </div>
+                        </ngx-dropzone-label>
+                    </div>
+                    <!--End  Select multple image using ngx-dropzone -->
+                    <!-- preview  selected Image -->
+                    <div class="row">
+                        <div class="col-6 col-sm-4 my-4 ">
+                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
+                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                </div>
+                                <div class="set-delete-like-wrapper position-absolute ">
+                                    <div class="action-btn">
+                                        
+                                        <span class="icon-delete-white fs-3"></span>
+                                        <label for="coverImage">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        </div>
+                                    </div>
+                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 my-4 ">
+                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
+                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                </div>
+                                <div class="set-delete-like-wrapper position-absolute ">
+                                    <div class="action-btn">
+                                        
+                                        <span class="icon-delete-white fs-3"></span>
+                                        <label for="coverImage">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        </div>
+                                    </div>
+                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                            </div>
+                        </div> <div class="col-6 col-sm-4 my-4 ">
+                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
+                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                </div>
+                                <div class="set-delete-like-wrapper position-absolute ">
+                                    <div class="action-btn">
+                                        
+                                        <span class="icon-delete-white fs-3"></span>
+                                        <label for="coverImage">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        </div>
+                                    </div>
+                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 my-4 ">
+                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
+                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                </div>
+                                <div class="set-delete-like-wrapper position-absolute ">
+                                    <div class="action-btn">
+                                        
+                                        <span class="icon-delete-white fs-3"></span>
+                                        <label for="coverImage">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        </div>
+                                    </div>
+                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 my-4 ">
+                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
+                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                </div>
+                                <div class="set-delete-like-wrapper position-absolute ">
+                                    <div class="action-btn">
+                                        
+                                        <span class="icon-delete-white fs-3"></span>
+                                        <label for="coverImage">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        </div>
+                                    </div>
+                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <!-- preview  selected Image -->
                 </div>
             </div>
-            <div class="col-12 col-sm-8 mt-4">
+            <div class="col-12 col-md-8 mt-4">
                 <div class="border p-4">
-                    <h6 class="fw-bold">Studio Details</h6>
+                    <h6 class="fw-bold my-2">Studio Details</h6>
                     <!-- First Row -->
                     <div class="row">
                         <!-- Studio Name -->
@@ -34,7 +138,7 @@
                     <!-- End Second Row -->
                     <div class="row">
                         <!--Studio Description -->
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="mt-3">
                                 <label for="StudioDescription" class="fw-bold">Studio Description<span
                                         class="text-danger"> *</span></label>
@@ -44,7 +148,7 @@
                         </div>
                         <!-- End  Studio Description -->
                         <!--Hardware & Equipments  -->
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             <div class="mt-3">
                                 <label for="Hardware&Equipments" class="fw-bold">Hardware & Equipments
                                     <span class="text-danger"> *</span></label>
@@ -102,7 +206,7 @@
                     <!-- End Third Row -->
                     <!-- Four -->
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 sm-col-6">
                             <div class="row">
                                 <!-- Select From -->
                                 <label class="fw-bold mt-3">Select Studio Days<span class="text-danger">
@@ -118,7 +222,7 @@
                                 </div>
                                 <!-- End Select From -->
                                 <!-- Select To -->
-                                <div class="col-6 col-sm-6">
+                                <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
                                         <ng-select placeholder="To" id="To">
@@ -130,7 +234,7 @@
                                 <!-- End to -->
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12">
                             <div class="row">
                                 <!-- Select From -->
                                 <label class="fw-bold mt-3">Select Studio Hours<span class="text-danger">
@@ -146,7 +250,7 @@
                                 </div>
                                 <!-- End Select From -->
                                 <!-- Select To -->
-                                <div class="col-6 col-sm-6">
+                                <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
                                         <ng-select placeholder="To" id="To">
@@ -162,7 +266,7 @@
                     <!-- End Four -->
                     <!-- checkbox -->
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-12 sn-col-8">
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="" id="RecordingRoom"
@@ -199,14 +303,14 @@
                                     </label>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <input type="text" class="form-control ms-4"  placeholder="Enter Amount"
+                                    <input type="text" class="form-control ms-4" placeholder="Enter Amount"
                                         [ngClass]="checkValue2 ? 'd-block' : 'd-none'" />
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- submit and Cancel button -->
-                    <div class="button my-2 my-lg-5 d-flex justify-content-end">
+                    <div class="button my-2 my-lg-5 d-flex justify-content-end mt-5 sm-mt-0">
                         <button type="button" class="btn btn-outline-info me-3">
                             Cancel
                         </button>

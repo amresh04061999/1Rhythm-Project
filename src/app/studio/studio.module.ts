@@ -15,6 +15,7 @@ import { ManageStudioProfileContainerComponent } from './manage-studio-profile-c
 import { ManageStudioProfilePresentationComponent } from './manage-studio-profile-container/manage-studio-profile-presentation/manage-studio-profile-presentation.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../shared/shared.module';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     StudioRoutingModule,
     NgSelectModule,
-    SharedModule
+    SharedModule,
+    NgxDropzoneModule
   ]
 })
 export class StudioModule { }
