@@ -16,6 +16,7 @@ import { ManageArtistProfilePresentationComponent } from './manage-artist-profil
 import { ViewMoreInformationPopupComponent } from './view-more-information-popup/view-more-information-popup.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     ArtistRoutingModule,
     SharedModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxDropzoneModule
   ]
 })
 export class ArtistModule { }
