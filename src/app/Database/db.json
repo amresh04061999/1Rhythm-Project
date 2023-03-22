@@ -1,0 +1,512 @@
+{
+  "users": [],
+
+  "userType": [
+    {
+      "usertype": "General User",
+      "id": 1
+    },
+    {
+      "usertype": "Studio Owner",
+      "id": 2
+    },
+    {
+      "usertype": "Artist",
+      "id": 3
+    }
+  ],
+  "country": [
+    {
+      "countryId": 1,
+      "countryName": "India"
+    },
+    {
+      "countryId": 2,
+      "countryName": "Pakistan"
+    }
+  ],
+  "state": [
+    {
+      "stateId": 1,
+      "countryId": 1,
+      "stateName": "Gujarat"
+    },
+    {
+      "stateId": 2,
+      "countryId": 1,
+      "stateName": "Up"
+    },
+    {
+      "stateId": 3,
+      "countryId": 1,
+      "stateName": "Mp"
+    },
+    {
+      "stateId": 4,
+      "countryId": 1,
+      "stateName": "Bihar"
+    },
+    {
+      "stateId": 5,
+      "countryId": 1,
+      "stateName": "Maharashtra"
+    },
+    {
+      "stateId": 6,
+      "countryId": 2,
+      "stateName": "Lahore"
+    },
+    {
+      "stateId": 7,
+      "countryId": 2,
+      "stateName": "Karachi"
+    }
+  ],
+  "city": [
+    {
+      "cityId": 1,
+      "stateId": 1,
+      "cityName": "Ahmedabad"
+    },
+    {
+      "cityId": 2,
+      "stateId": 1,
+      "cityName": "Surat"
+    },
+    {
+      "cityId": 3,
+      "stateId": 1,
+      "cityName": "Vadodara"
+    },
+    {
+      "cityId": 4,
+      "stateId": 1,
+      "cityName": "Rajkot"
+    },
+    {
+      "cityId": 5,
+      "stateId": 1,
+      "cityName": "Bhavnagar"
+    },
+    {
+      "cityId": 6,
+      "stateId": 1,
+      "cityName": "Jamnagar"
+    },
+    {
+      "cityId": 7,
+      "stateId": 1,
+      "cityName": "Gandhinagar"
+    },
+    {
+      "cityId": 8,
+      "stateId": 1,
+      "cityName": "Junagadh"
+    },
+    {
+      "cityId": 9,
+      "stateId": 1,
+      "cityName": "Gandhidham"
+    },
+    {
+      "cityId": 10,
+      "stateId": 1,
+      "cityName": "Anand"
+    },
+    {
+      "cityId": 11,
+      "stateId": 1,
+      "cityName": "Navsari"
+    },
+    {
+      "cityId": 12,
+      "stateId": 2,
+      "cityName": "Kanpur"
+    },
+    {
+      "cityId": 13,
+      "stateId": 2,
+      "cityName": "Lucknow"
+    },
+    {
+      "cityId": 14,
+      "stateId": 2,
+      "cityName": "Ghaziabad"
+    },
+    {
+      "cityId": 15,
+      "stateId": 2,
+      "cityName": "Agra"
+    },
+    {
+      "cityId": 16,
+      "stateId": 2,
+      "cityName": "Varanasi"
+    },
+    {
+      "cityId": 17,
+      "stateId": 2,
+      "cityName": "Prayagraj"
+    },
+    {
+      "cityId": 18,
+      "stateId": 2,
+      "cityName": "Bareilly"
+    },
+    {
+      "cityId": 19,
+      "stateId": 2,
+      "cityName": "Navsari"
+    },
+    {
+      "cityId": 20,
+      "stateId": 2,
+      "cityName": "Aligarh"
+    },
+    {
+      "cityId": 21,
+      "stateId": 2,
+      "cityName": "Firozabad"
+    },
+    {
+      "cityId": 22,
+      "stateId": 2,
+      "cityName": "Jhansi"
+    },
+    {
+      "cityId": 23,
+      "stateId": 2,
+      "cityName": "Ayodhya"
+    },
+    {
+      "cityId": 24,
+      "stateId": 2,
+      "cityName": "Rampur"
+    },
+    {
+      "cityId": 25,
+      "stateId": 3,
+      "cityName": "Indore"
+    },
+    {
+      "cityId": 26,
+      "stateId": 3,
+      "cityName": "Bhopal"
+    },
+    {
+      "cityId": 27,
+      "stateId": 3,
+      "cityName": "Jabalpur"
+    },
+    {
+      "cityId": 28,
+      "stateId": 3,
+      "cityName": "Gwalior"
+    },
+    {
+      "cityId": 29,
+      "stateId": 3,
+      "cityName": "Ujjain"
+    },
+    {
+      "cityId": 30,
+      "stateId": 3,
+      "cityName": "Sagar"
+    },
+    {
+      "cityId": 31,
+      "stateId": 3,
+      "cityName": "Dewas"
+    },
+    {
+      "cityId": 32,
+      "stateId": 3,
+      "cityName": "Satna"
+    },
+    {
+      "cityId": 33,
+      "stateId": 3,
+      "cityName": "Ratlam"
+    },
+    {
+      "cityId": 34,
+      "stateId": 3,
+      "cityName": "Rewa"
+    },
+    {
+      "cityId": 35,
+      "stateId": 3,
+      "cityName": "Katni"
+    },
+    {
+      "cityId": 36,
+      "stateId": 3,
+      "cityName": "Singrauli"
+    },
+    {
+      "cityId": 38,
+      "stateId": 3,
+      "cityName": "Burhanpur"
+    },
+    {
+      "cityId": 39,
+      "stateId": 3,
+      "cityName": "Khandwa"
+    },
+    {
+      "cityId": 40,
+      "stateId": 3,
+      "cityName": "Bhind"
+    },
+    {
+      "cityId": 40,
+      "stateId": 3,
+      "cityName": "Chhindwara"
+    },
+    {
+      "cityId": 41,
+      "stateId": 4,
+      "cityName": "Patna"
+    },
+    {
+      "cityId": 42,
+      "stateId": 4,
+      "cityName": "Gaya"
+    },
+    {
+      "cityId": 43,
+      "stateId": 4,
+      "cityName": "Purnia"
+    },
+    {
+      "cityId": 44,
+      "stateId": 4,
+      "cityName": "Begusarai"
+    },
+    {
+      "cityId": 45,
+      "stateId": 4,
+      "cityName": "Bhagalpur"
+    },
+    {
+      "cityId": 46,
+      "stateId": 4,
+      "cityName": "Bihar Sharif"
+    },
+    {
+      "cityId": 47,
+      "stateId": 4,
+      "cityName": "Darbhanga"
+    },
+    {
+      "cityId": 48,
+      "stateId": 4,
+      "cityName": "Arrah"
+    },
+    {
+      "cityId": 49,
+      "stateId": 4,
+      "cityName": "Katihar"
+    },
+    {
+      "cityId": 50,
+      "stateId": 4,
+      "cityName": "Munger"
+    },
+    {
+      "cityId": 51,
+      "stateId": 4,
+      "cityName": "Chhapra"
+    },
+    {
+      "cityId": 52,
+      "stateId": 4,
+      "cityName": "Mehsi"
+    },
+    {
+      "cityId": 53,
+      "stateId": 4,
+      "cityName": "Danapur"
+    },
+    {
+      "cityId": 54,
+      "stateId": 4,
+      "cityName": "Bettiah"
+    },
+    {
+      "cityId": 55,
+      "stateId": 4,
+      "cityName": "SahHajipurarsa"
+    },
+    {
+      "cityId": 56,
+      "stateId": 4,
+      "cityName": "Sasaram"
+    },
+    {
+      "cityId": 57,
+      "stateId": 4,
+      "cityName": "Dehri"
+    },
+    {
+      "cityId": 58,
+      "stateId": 4,
+      "cityName": "Siwan"
+    },
+    {
+      "cityId": 59,
+      "stateId": 4,
+      "cityName": "Motihari"
+    },
+    {
+      "cityId": 60,
+      "stateId": 4,
+      "cityName": "Nawada"
+    },
+    {
+      "cityId": 61,
+      "stateId": 5,
+      "cityName": "Mumbai"
+    },
+    {
+      "cityId": 62,
+      "stateId": 5,
+      "cityName": "Pune"
+    },
+    {
+      "cityId": 63,
+      "stateId": 5,
+      "cityName": "Nagpur"
+    },
+    {
+      "cityId": 64,
+      "stateId": 5,
+      "cityName": "Thane"
+    },
+    {
+      "cityId": 65,
+      "stateId": 5,
+      "cityName": "Nashik"
+    },
+    {
+      "cityId": 66,
+      "stateId": 5,
+      "cityName": "Navi Mumbai"
+    },
+    {
+      "cityId": 67,
+      "stateId": 5,
+      "cityName": "Solapur"
+    },
+    {
+      "cityId": 68,
+      "stateId": 5,
+      "cityName": "Mira-Bhayandar"
+    },
+    {
+      "cityId": 69,
+      "stateId": 5,
+      "cityName": "Jalgaon"
+    },
+    {
+      "cityId": 70,
+      "stateId": 5,
+      "cityName": "Malegaon"
+    },
+    {
+      "cityId": 71,
+      "stateId": 5,
+      "cityName": "Akola"
+    },
+    {
+      "cityId": 72,
+      "stateId": 5,
+      "cityName": "Latur"
+    },
+    {
+      "cityId": 73,
+      "stateId": 5,
+      "cityName": "Dhule"
+    },
+    {
+      "cityId": 74,
+      "stateId": 5,
+      "cityName": "Ahmednagar"
+    },
+    {
+      "cityId": 75,
+      "stateId": 5,
+      "cityName": "Chandrapur"
+    },
+    {
+      "cityId": 76,
+      "stateId": 5,
+      "cityName": "Parbhani"
+    },
+    {
+      "cityId": 76,
+      "stateId": 5,
+      "cityName": "Ichalkaranji"
+    },
+    {
+      "cityId": 77,
+      "stateId": 5,
+      "cityName": "Jalna"
+    },
+    {
+      "cityId": 78,
+      "stateId": 5,
+      "cityName": "Badlapur"
+    },
+    {
+      "cityId": 79,
+      "stateId": 6,
+      "cityName": "Samanabad"
+    },
+    {
+      "cityId": 80,
+      "stateId": 6,
+      "cityName": "Iqbal Town"
+    },
+    {
+      "cityId": 81,
+      "stateId": 6,
+      "cityName": "Nishtar"
+    },
+    {
+      "cityId": 82,
+      "stateId": 6,
+      "cityName": "Gulberg"
+    },
+    {
+      "cityId": 83,
+      "stateId": 6,
+      "cityName": "Aziz Bhatti"
+    },
+    {
+      "cityId": 84,
+      "stateId": 7,
+      "cityName": "Baldia"
+    },
+    {
+      "cityId": 85,
+      "stateId": 7,
+      "cityName": "Bin"
+    },
+    {
+      "cityId": 86,
+      "stateId": 7,
+      "cityName": "Gadap "
+    },
+    {
+      "cityId": 87,
+      "stateId": 7,
+      "cityName": "Jamshed  "
+    },
+    {
+      "cityId": 88,
+      "stateId": 7,
+      "cityName": "Kiamari "
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegistrationRoutingModule } from './registration-routing.module';
 import { RegistrationComponent } from './registration.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
   imports: [
     CommonModule,
     RegistrationRoutingModule,
-    NgSelectModule
+    NgSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class RegistrationModule { }

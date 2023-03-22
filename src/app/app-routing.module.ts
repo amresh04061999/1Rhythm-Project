@@ -1,6 +1,5 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ManageArtistProfileContainerComponent } from './artist/manage-artist-profile-container/manage-artist-profile-container.component';
 import { MasterComponent } from './core/component/master/master.component';
 import { AuthGuard } from './core/services/auth/auth.guard';
 import { HomeContainerComponent } from './home-container/home-container.component';
@@ -11,7 +10,7 @@ import { BookingHistoryComponent } from './shared/booking-history/booking-histor
 const routes: Routes = [
   {
     path: '', component: MasterComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
