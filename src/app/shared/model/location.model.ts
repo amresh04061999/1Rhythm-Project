@@ -10,18 +10,22 @@ export class Country {
 // State model
 export class State {
   public stateId: number;
+  public countryId:number;
   public stateName: string;
-  constructor(stateId: number, stateName: string) {
+  constructor(stateId: number, stateName: string,countryId:number) {
     this.stateId = stateId;
+    this.countryId=countryId
     this.stateName = stateName;
   }
 }
 // city Model
 export class City {
-  public id: number;
+  public cityId: number;
   public cityName: string;
-  constructor(id: number, cityName: string) {
-    this.id = -id;
+  public stateId:string;
+  constructor(id: number, cityName: string,stateId:string) {
+    this.cityId = -id;
     this.cityName = cityName;
+    this.stateId=stateId;
   }
 }

@@ -1,8 +1,8 @@
   export class UserType{
         public id:number;
-        public userTypes:string;
-        constructor( userTypes:string, id:number){
+        public usertype:string;
+        constructor( usertype:string, id:number){
             this.id=id
-                this.userTypes=userTypes;
+            this.usertype=usertype;
         }
   }

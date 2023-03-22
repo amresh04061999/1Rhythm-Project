@@ -10,8 +10,9 @@ export class Users {
     public countryId:number;
     public stateId:number;
     public cityId:number;
+    public userRoll:string;
     constructor(id:number,firstName:string,lastName:string,email:string,password:string,phoneNumber:number,countryId:number,stateId:number,
-        cityId:number){
+        cityId:number,userRoll:string){
              this.id=id
              this.firstName=firstName;
              this.lastName=lastName;
@@ -21,5 +22,6 @@ export class Users {
              this.countryId=countryId;
              this.stateId=stateId;
              this.cityId=cityId;
+             this.userRoll=userRoll;
             }
 }

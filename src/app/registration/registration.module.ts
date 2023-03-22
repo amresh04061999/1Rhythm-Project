@@ -4,6 +4,9 @@ import { RegistrationRoutingModule } from './registration-routing.module';
 import { RegistrationComponent } from './registration.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
+import { LocationService } from './services/location.service';
 
 
 @NgModule({
@@ -14,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RegistrationRoutingModule,
     NgSelectModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers:[UserService,LocationService]
 })
 export class RegistrationModule { }
