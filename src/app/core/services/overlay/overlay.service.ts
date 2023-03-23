@@ -7,7 +7,6 @@ export class OverlayService{
   public overlayRef: any;
   constructor(private overlay:Overlay) { 
   }
-
   /**
    * Open a custom component in an overlay
    */
@@ -21,7 +20,6 @@ export class OverlayService{
       positionStrategy,
       hasBackdrop: true,
       backdropClass: istrue ? 'overlay-backdrop':'' ,
-      //  backdropClass: 'cdk-overlay-transparent-backdrop'
     });
     const portal = new ComponentPortal(component);
     const instance = this.overlayRef.attach(portal);
