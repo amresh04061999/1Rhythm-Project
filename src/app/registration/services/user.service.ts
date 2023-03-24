@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Users } from '../model/Registration.model';
 import { UserType } from '../model/UserType.model';
 
 @Injectable()
@@ -16,5 +17,8 @@ export class UserService {
    */
   getUserType():Observable<UserType[]>{
     return this._httpClient.get<UserType[]>(`${this.baseUrl}userType`)
+  }
+  adduser(user:Users):Observable<Users>{
+    return this._httpClient.post<Users>(`${this.baseUrl}users`,user);
   }
 }
