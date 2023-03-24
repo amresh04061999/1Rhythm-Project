@@ -10,7 +10,7 @@ import { BookingHistoryComponent } from './shared/booking-history/booking-histor
 const routes: Routes = [
   {
     path: '', component: MasterComponent,
-    canActivate: [AuthGuard],
+    canActivate:[AuthGuard],
     children: [
       {
         path: '',
