@@ -1,3 +1,33 @@
+// font-family
+$font-family: 'Poppins', sans-serif;
+// size
+$width: 100%;
+$height: 100%;
+
+// fs
+$font-size-fs-7: 14px;
+$font-size-fs-8: 12px;
+// login Varable 
+$login-logo-image-width: 220px;
+
+// registration
+$registration-image-width-sm: 300px;
+$registration-form-Width: 300px;
+$registration-form-height: 500px;
+$registration-form-height-sm: 560px;
+$registration-form-height-lg: 650px;
+$select-profile-image-width: 100px;
+$select-profile-image-height: 100px;
+$select-profile-image-Border-radius: 50%;
+
+// breck point;
+$Small-sm: 576px;
+$Medium-md: 768px;
+$Large-lg	: 992px;
+$Extra-large-xl: 1200px;
+$Extra-extra-large-xxl: 1400px;
+
+
 // input type Variable
 $input-btn-padding-y: 5px;
 $input-btn-padding-x: 14px;
@@ -50,7 +80,7 @@ $header-logo-image-width-lg: 100px;
 
 // main
 $main-bg-gradient: linear-gradient(180deg, #F9F7F7 0%, rgba(249, 247, 247, 0) 100%);
-
-// card 
+$nav-link-color : $dark;
+$bg-secondary-gray: rgba(13, 15, 20, 0.1); // card 
 $card-wrapper-image-width: 250px;
 $card-wrapper-image-height: 200px;

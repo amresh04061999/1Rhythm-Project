@@ -4,15 +4,15 @@
     <!-- Left Section -->
     <img src="./../../assets/images/1Rhythm_logo.png" alt="1Rhythm-logo" class="img-responsive" />
     <!-- Right Section -->
-    <div class="login-from-wrapper bg-white p-5">
+    <div class="login-form-wrapper bg-white p-4 p-sm-5 rounded">
       <span class="text-uppercase fw-bold mb-5">welcome</span>
-      <h3 class="my-3 fw-bold">Login to Your Account</h3>
+      <h3 class="my-2 my-sm-3 fw-bold">Login to Your Account</h3>
       <span class="mb-4 fs-7">Create an Account?
         <a href="" class="text-decoration-none fw-bold" routerLink="/ragistration">Sign Up</a>
       </span>
       <!-- Start Form  -->
       <form [formGroup]="userLogin" (ngSubmit)="login()">
-        <div class="mb-4 mt-5">
+        <div class="mb-4 mt-3 mt-sm-5">
           <div class="form-group">
             <label for="email" class="fw-bold">Email ID <span class="text-danger"> *</span></label>
             <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [ngClass]="{
@@ -27,14 +27,14 @@
                 validator['email'].dirty ||
                 validator['email'].touched)
             ">
-            <span class="text-danger" *ngIf="validator['email'].errors?.['required']">This field is required</span>
+            <span class="text-danger fs-8" *ngIf="validator['email'].errors?.['required']">This field is required</span>
             <span *ngIf="validator['email'].errors?.['pattern'] && (isSubmited || validator['email'].touched)"
-              class="text-danger">
+              class="text-danger fs-8">
               User does not exist</span>
           </div>
         </div>
 
-        <div class="mb-5">
+        <div class="mb-4 mb-sm-5">
           <div class="form-group">
             <label for="password" class="fw-bold">Password <span class="text-danger"> *</span></label>
             <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password"
@@ -50,15 +50,15 @@
                 validator['password'].dirty ||
                 validator['password'].touched)
             ">
-            <span class="text-danger" *ngIf="validator['password'].errors?.['required']">This field is required</span>
+            <span class="text-danger fs-8" *ngIf="validator['password'].errors?.['required']">This field is
+              required</span>
             <span *ngIf="validator['password'].errors?.['pattern'] && (validator['password'].touched)"
-              class="text-danger">
+              class="text-danger fs-8">
               Please enter valid password
             </span>
           </div>
         </div>
-
-        <div class="button mb-1">
+        <div class="d-flex justify-content-center justify-content-sm-start  mb-1">
           <button type="submit" class="btn btn-primary btn-gradient border-0">
             Sign In
           </button>

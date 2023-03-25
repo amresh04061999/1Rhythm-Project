@@ -1,9 +1,9 @@
 <!-- start Header -->
-<header class="h-100  overflow-hidden">
+<header class=" overflow-hidden">
   <div class="d-flex justify-content-between align-items-center p-2 ">
     <!-- 1rhythm Logo -->
     <div class="logo ms-3 cursor-pointer">
-      <img src="./../../../../assets/images/1Rhythm logo.svg" alt="1Rhythm logo"  routerLink="/"/>
+      <img src="./../../../../assets/images/1Rhythm logo.svg" alt="1Rhythm logo" routerLink="/" />
     </div>
     <!-- End 1rhythm Logo -->
     <!-- desktop -->
@@ -11,7 +11,7 @@
       <ul class="nav">
         <li class="nav-item d-flex align-items-center  ">
           <img src="./../../../../assets/images/home.svg" alt="home-icon" />
-          <a routerLink="/"><span class="nav-link fw-light ms-0 text-primary">Home</span></a>
+          <a routerLink="/"><span class="nav-link  ms-0 text-primary">Home</span></a>
         </li>
         <li class="nav-item d-flex align-items-center ">
           <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
@@ -23,53 +23,89 @@
         </li>
         <li class="nav-item d-flex align-items-center ms-4">
           <img src="./../../../../assets/images/noun-calendar-2095603 4.svg" alt="BookingHistory-icon" />
-          <a routerLink="/booking-history" ><span class="nav-link fw-light ">Booking History</span></a>
+          <a routerLink="/booking-history"><span class="nav-link fw-light ">Booking History</span></a>
         </li>
       </ul>
     </div>
     <!-- Profile Image -->
     <div class="profile-image overflow-hidden d-none d-md-block me-3 cursor-pointer">
-      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" (click)="OpenProfileMenu()" />
+      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto"
+        (click)="OpenProfileMenu()" />
     </div>
     <!-- desktop -->
     <!-- mobile -->
     <label class="opne me-3 d-md-none" for="menuOpen" (click)="open()">
-      <span [ngClass]="isOpen ?'icon-menu':'icon-close'" ></span>
+      <span [ngClass]="isOpen ?'icon-menu':'icon-close'"></span>
     </label>
   </div>
   <!-- End Header -->
 
   <!-- mobile -->
-  <div class="text-white border">
+  <div class="text-white border ">
     <input type="checkbox" id="menuOpen" class="d-none" />
     <aside class="sidebar bg-white w-100">
       <!-- Profile Image -->
-      <div class="d-flex align-items-center mt-4">
-        <div class="profile-image overflow-hidden ms-3 me-3">
-          <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
+      <div class="d-flex align-items-center justify-content-between mt-4">
+        <div class="d-flex align-items-center">
+          <div class="profile-image overflow-hidden cursor-pointer ms-3 me-3">
+            <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
+          </div>
+          <h4 class="text-dark fs-7 cursor-pointer">Amresh Prasad</h4>
         </div>
-        <h4 class="text-dark fs-7">Amresh Prasad</h4>
+        <span class="icon-chevron-down text-black  pe-4" (click)="opendown()"></span>
       </div>
-      <!-- Profile Image -->
+      <!-- End Profile Image -->
+
+      <!-- profile Menu -->
+      <div class="text-black mt-3" [ngClass]="isDown ?'d-block':'d-none'">
+        <ul class="nav  d-flex flex-column">
+          <li class="nav-item d-flex align-items-center">
+            <span class="icon-search fs-2 ms-4"></span>
+            <div class="d-flex align-items-center">
+              <a href="" class="nav-link">Available</a>
+              <div class="form-check form-switch ">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <span class="icon-profile fs-2 ms-4"></span>
+            <a class="nav-link" routerLink="/manage-profile">Manage Profile</a>
+          </li>
+          <li class="nav-item d-flex align-items-center ">
+            <span class="icon-manage-studio fs-3 ms-4"></span>
+            <a class="nav-link" routerLink="studio/manage-studio">Manage Studio Profile</a>
+          </li>
+          <li class="nav-item d-flex align-items-center ">
+            <span class="icon-log-out fs-2 ms-4"></span>
+            <a class="nav-link">Log out</a>
+          </li>
+        </ul>
+      </div>
+      <!--End  profile Menu -->
+
       <!-- navigation -->
-      <ul class="nav d-flex flex-column ms-4 mt-3">
-        <li class="nav-item d-flex align-items-center">
-          <img src="./../../../../assets/images/home.svg" alt="home-icon" />
-          <a href="http://"><span class="nav-link fw-light text-primary ms-1">Home</span></a>
-        </li>
-        <li class="nav-item d-flex align-items-center ">
-          <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
-          <a href="http://"><span class="nav-link fw-light ">Studio</span></a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <img src="./../../../../assets/images/noun-artist-1191144 1.svg" alt="Artist-icon" />
-          <a href="http://"><span class="nav-link fw-light ">Artist</span></a>
-        </li>
-        <li class="nav-item d-flex align-items-center ">
-          <img src="./../../../../assets/images/noun-calendar-2095603 4.svg" alt="BookingHistory-icon" />
-          <a href="http://"><span class="nav-link fw-light ">Booking History</span></a>
-        </li>
-      </ul>
+      <div class="">
+        <ul class="nav d-flex flex-column">
+          <li class="nav-item d-flex align-items-center cursor-pointer">
+            <span class=" icon-home text-black ms-4"></span>
+            <a routerLink="/"><span class="nav-link fw-light text-primary ms-1 ">Home</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center cursor-pointer">
+            <span class=" icon-Studio text-black ms-4"></span>
+            <a routerLink="studio/studio-list"><span class="nav-link ">Studio</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center cursor-pointer">
+            <span class=" icon-Artist text-black ms-4"></span>
+            <a routerLink="artist/artist-list"><span class="nav-link ">Artist</span></a>
+          </li>
+          <li class="nav-item d-flex align-items-center cursor-pointer ">
+            <span class="icon-calender text-black ms-4"></span>
+            <a routerLink="/booking-history"><span class="nav-link  ">Booking History</span></a>
+          </li>
+        </ul>
+      </div>
       <!-- navigation -->
     </aside>
   </div>

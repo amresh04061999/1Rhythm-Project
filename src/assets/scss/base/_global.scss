@@ -1,44 +1,53 @@
 //  Fonts Family
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
 // Universal Style
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: $width;
+  $height: 100%;
 }
+
 // body
 body {
-    overflow: hidden;
-    font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  font-family: $font-family;
 }
 
 // helper class
-.btn-gradient{
-    background:$gradient;
+.btn-gradient {
+  background: $gradient;
 }
-.text-secondary-gray{
-  color:$text-muted
+
+.text-secondary-gray {
+  color: $text-muted
 }
-.bg-secondary-gray{
-  background-color:rgba(13, 15, 20, 0.1);
+
+.bg-secondary-gray {
+  background-color: $bg-secondary-gray;
 }
-.bg-primary-color{
-  background-color:lighten($color: $primary, $amount: 40);;
+
+.bg-primary-color {
+  background-color: lighten($color: $primary, $amount: 40);
+  ;
 }
-.fs-7{
-  font-size: 14px;
+
+.fs-7 {
+  font-size: $font-size-fs-7;
 }
-.fs-8{
-font-size: 12px;
+
+.fs-8 {
+  font-size: $font-size-fs-8;
 }
-.cursor-pointer{
- cursor: pointer;
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 // import style ng-select
@@ -46,47 +55,48 @@ font-size: 12px;
 
 // arrow down style
 .ng-select {
-    .ng-arrow-wrapper {
-      .ng-arrow {
-        border-color: $dark transparent transparent;
-        border-style: solid;
-        border-width: 5px 5px 2.5px;
-      }
+  .ng-arrow-wrapper {
+    .ng-arrow {
+      border-color: $dark transparent transparent;
+      border-style: solid;
+      border-width: 5px 5px 2.5px;
     }
   }
-  
-  // Cancel X display none
-  .ng-select .ng-clear-wrapper{
-    display: none;
+}
+
+// Cancel X display none
+.ng-select .ng-clear-wrapper {
+  display: none;
+}
+
+// ng Placeholder
+.ng-select .ng-select-container .ng-value-container .ng-placeholder {
+  color: $gray;
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  font-size: 0.9rem;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+  border: 1px solid $primary;
+  box-shadow: none;
+}
+
+.invalid-border.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+  border: 0;
+}
+
+.ng-select-country.ng-select {
+  .ng-select-container {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
   }
-  // ng Placeholder
-  .ng-select .ng-select-container .ng-value-container .ng-placeholder{
-    color:$gray;
-  }
-  .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
-    font-size: 0.9rem;
-  }
- 
-  .ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
-    border: 1px solid $primary;
-    box-shadow: none;
-  }
-  
-  .invalid-border.ng-select.ng-select-focused:not(.ng-select-opened)
-    > .ng-select-container {
-    border: 0;
-  }
-  
-  .ng-select-country.ng-select {
-    .ng-select-container {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      border-left: 0;
-    }
-  }
-  
-  // scrollbar css
- 
+}
+
+// scrollbar css
+
 /* width */
 ::-webkit-scrollbar {
   width: 7px;
@@ -94,19 +104,19 @@ font-size: 12px;
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px $gray; 
+  box-shadow: inset 0 0 5px $gray;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:$gradient; 
+  background: $gradient;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $secondary; 
+  background: $secondary;
 }
 
 .overlay-backdrop {

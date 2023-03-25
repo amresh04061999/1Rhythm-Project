@@ -9,15 +9,20 @@ import { ProfileMenuComponent } from '../profile-menu/profile-menu.component';
 })
 export class HeaderComponent {
   public isOpen: boolean;
-  constructor(private _overlaySevices:OverlayService) {
+  public isDown: boolean;
+  constructor(private _overlaySevices: OverlayService) {
+    this.isDown = false;
     this.isOpen = true;
   }
   public open(): void {
-      this.isOpen = !this.isOpen;
+    this.isOpen = !this.isOpen;
   }
-// Open Profile menu
-  public OpenProfileMenu():void{
-    this._overlaySevices.open(ProfileMenuComponent,false);
+  public opendown(): void {
+    this.isDown = !this.isDown;
   }
- 
+  // Open Profile menu
+  public OpenProfileMenu(): void {
+    this._overlaySevices.open(ProfileMenuComponent, false);
+  }
+
 }

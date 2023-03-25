@@ -1,20 +1,21 @@
 <!-- Registration Form -->
-<section class="bg-image h-100 d-flex justify-content-around align-items-center ">
-        <img src="./../../assets/images/1Rhythm_logo.png" alt="1Rhythm-image " class="img-fluid Rhythm-image " >   
+<section class="bg-image h-100 d-flex justify-content-around align-items-center">
+    <img src="./../../assets/images/1Rhythm_logo.png" alt="1Rhythm-image " class="img-fluid Rhythm-image ">
     <!-- right section Wrapper -->
-    <div class="bg-white registration-from-wrapper p-3 p-lg-5 rounded">
+    <div class="registration-form-wrapper  bg-white rounded p-3 p-lg-5 ">
         <h3 class="fw-bold">Create Your Account</h3>
-        <span class="mt-2 fs-7">Already Have a Account? <a href="" class="text-decoration-none fw-bold"> Sign In</a></span>
+        <span class="mt-2 fs-7">Already Have a Account? <a href="" class="text-decoration-none fw-bold"> Sign
+                In</a></span>
         <!-- Registration from  -->
         <form [formGroup]="users" (ngSubmit)="registration()">
             <!-- profile image select Section -->
-            <div class="row">
+            <div class="row m-auto">
                 <div class="col-12 my-3 my-lg-4 ">
                     <label for="select-image" class="position-relative cursor-pointer">
                         <div class="profile-image overflow-hidden">
                             <img src="./../../assets/images/registration-profile-vector.png" alt="vector-image"
                                 width="w-100 h-100" *ngIf="!base64String">
-                                <img [src]="base64String" alt="profile-icon" class="w-100 h-100 object-fit-cover" />
+                            <img [src]="base64String" alt="profile-icon" class="w-100 h-100 object-fit-cover" />
                         </div>
                         <img src="./../../assets/images/pluse-image.png" alt="pluse-image"
                             class="pluse-image position-absolute">
@@ -25,123 +26,142 @@
             </div>
             <!-- End profile image select Section -->
             <!-- First Row -->
-            <div class="row">
+            <div class="row m-auto">
                 <!-- FirstName -->
                 <div class="col-12 col-sm-6">
                     <div class="form-group mt-3">
-                        <label for="FirstName" class="fw-bold ">First Name <span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="FirstName" placeholder="First Name" formControlName="firstName"
-                        [ngClass]="{'border-danger':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmited)}">
+                        <label for="FirstName" class="fw-bold ">First Name <span class="text-danger">
+                                *</span></label>
+                        <input type="text" class="form-control" id="FirstName" placeholder="First Name"
+                            formControlName="firstName"
+                            [ngClass]="{'border-danger':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmited)}">
                     </div>
                     <!-- Validation For firstName  -->
-                  <div
-                  *ngIf="validator['firstName'].invalid && (isSubmited || validator['firstName'].touched||validator['firstName'].dirty)">
-                  <span class="text-danger fs-7" *ngIf="validator['firstName'].errors?.['required']">This Field
-                    Is
-                    Required.</span>
-                  <span class="text-danger fs-7" *ngIf="validator['firstName'].errors?.['pattern']"> First Name may
-                    contain letters only.</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="validator['firstName'].errors?.['maxlength'] && !(validator['firstName'].errors?.['pattern'])">
-                    First Name must be less than 25 characters.</span>
-                </div>
+                    <div
+                        *ngIf="validator['firstName'].invalid && (isSubmited || validator['firstName'].touched||validator['firstName'].dirty)">
+                        <span class="text-danger fs-8" *ngIf="validator['firstName'].errors?.['required']">This
+                            Field
+                            Is
+                            Required.</span>
+                        <span class="text-danger fs-8" *ngIf="validator['firstName'].errors?.['pattern']"> First
+                            Name
+                            may
+                            contain letters only.</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="validator['firstName'].errors?.['maxlength'] && !(validator['firstName'].errors?.['pattern'])">
+                            First Name must be less than 25 characters.</span>
+                    </div>
                 </div>
                 <!-- End  FirstName -->
                 <!-- Lastname -->
                 <div class="col-12  col-sm-6">
                     <div class="form-group mt-3">
                         <label for="LastName" class="fw-bold ">Last Name <span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="LastName" placeholder="Last Name" formControlName="lastName"
-                        [ngClass]="{'border-danger':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmited)}">
+                        <input type="text" class="form-control" id="LastName" placeholder="Last Name"
+                            formControlName="lastName"
+                            [ngClass]="{'border-danger':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmited)}">
                     </div>
-                   <!-- Validation for lastName -->
-                  <div
-                  *ngIf="validator['lastName'].invalid && (isSubmited  || validator['lastName'].touched ||validator['lastName'].dirty)">
-                  <span class="text-danger fs-7" *ngIf="validator['lastName'].errors?.['required']"> This Field Is
-                    Required</span>
-                  <span class="text-danger fs-7" *ngIf="validator['lastName'].errors?.['pattern']"> Last Name may
-                    contain
-                    letters only.</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="validator['lastName'].errors?.['maxlength'] && !(validator['lastName'].errors?.['pattern'])">
-                    Last Name must be less than 25 characters.</span>
-                </div>
+                    <!-- Validation for lastName -->
+                    <div
+                        *ngIf="validator['lastName'].invalid && (isSubmited  || validator['lastName'].touched ||validator['lastName'].dirty)">
+                        <span class="text-danger fs-8" *ngIf="validator['lastName'].errors?.['required']"> This
+                            Field Is
+                            Required</span>
+                        <span class="text-danger fs-8" *ngIf="validator['lastName'].errors?.['pattern']"> Last Name
+                            may
+                            contain
+                            letters only.</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="validator['lastName'].errors?.['maxlength'] && !(validator['lastName'].errors?.['pattern'])">
+                            Last Name must be less than 25 characters.</span>
+                    </div>
                 </div>
                 <!-- End lastName -->
             </div>
             <!-- End First Row -->
             <!-- Second Row -->
-            <div class="row">
+            <div class="row m-auto">
                 <!-- Email ID -->
                 <div class="col-12 col-sm-6">
                     <div class="form-group mt-3">
                         <label for="EmailID" class="fw-bold ">Email Id<span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="EmailID" placeholder="Email ID" formControlName="email"
-                        [ngClass]="{'border-danger':validator['email'].invalid && (validator['email'].touched||isSubmited)}">
-                    </div> 
+                        <input type="text" class="form-control" id="EmailID" placeholder="Email ID"
+                            formControlName="email"
+                            [ngClass]="{'border-danger':validator['email'].invalid && (validator['email'].touched||isSubmited)}">
+                    </div>
                     <!-- validation for email  -->
-                  <div
-                  *ngIf="validator['email'].invalid && (isSubmited || validator['email'].touched ||validator['email'].dirty)">
-                  <span class="text-danger fs-7" *ngIf="validator['email'].errors?.['required']">This Field Is
-                    Required</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="validator['email'].errors?.['pattern'] && validator['email'].touched"> Please enter valid
-                    email
-                    id.</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="validator['email'].errors?.['maxlength'] && !(validator['email'].errors?.['pattern'])">
-                    email Id must be less than 50 characters.</span>
-                </div>
+                    <div
+                        *ngIf="validator['email'].invalid && (isSubmited || validator['email'].touched ||validator['email'].dirty)">
+                        <span class="text-danger fs-8" *ngIf="validator['email'].errors?.['required']">This Field Is
+                            Required</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="validator['email'].errors?.['pattern'] && validator['email'].touched"> Please
+                            enter
+                            valid
+                            email
+                            id.</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="validator['email'].errors?.['maxlength'] && !(validator['email'].errors?.['pattern'])">
+                            email Id must be less than 50 characters.</span>
+                    </div>
                 </div>
                 <!-- End  Email ID -->
                 <!-- Password -->
                 <div class="col-12 col-sm-6">
                     <div class="form-group mt-3">
                         <label for="Password" class="fw-bold ">Password <span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="Password" placeholder="Password" formControlName="password"
-                        [ngClass]="{'border-danger':validator['password'].invalid && (validator['password'].touched||isSubmited)}" >
+                        <input type="text" class="form-control" id="Password" placeholder="Password"
+                            formControlName="password"
+                            [ngClass]="{'border-danger':validator['password'].invalid && (validator['password'].touched||isSubmited)}">
                     </div>
-                   <!-- password validation -->
-                  <div
-                  *ngIf="validator['password'].invalid && (isSubmited || validator['password'].touched ||validator['password'].dirty)">
-                  <span class="text-danger fs-7" *ngIf="validator['password'].errors?.['required']">This Field Is
-                    Required</span>
-                  <span class="text-danger fs-7" *ngIf="validator['password'].errors?.['pattern']">
-                    password must contain 1 uppercase alphabet, 1 numeric value, and 1 special character (@ # $ % ^ &
-                    *
-                    {{"}"}} - _ + = [ ] {{"{"}} | \ : ' , ? / ` ~ " ( ) ; )</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="(validator['password'].errors?.['minlength'] ||validator['password'].errors?.['maxlength']) && !(validator['password'].errors?.['pattern'])">
-                    Password must be
-                    between 8-30 characters.</span>
-                </div>
+                    <!-- password validation -->
+                    <div
+                        *ngIf="validator['password'].invalid && (isSubmited || validator['password'].touched ||validator['password'].dirty)">
+                        <span class="text-danger fs-8" *ngIf="validator['password'].errors?.['required']">This Field
+                            Is
+                            Required</span>
+                        <span class="text-danger fs-8" *ngIf="validator['password'].errors?.['pattern']">
+                            password must contain 1 uppercase alphabet, 1 numeric value, and 1 special character (@
+                            # $
+                            % ^ &
+                            *
+                            {{"}"}} - _ + = [ ] {{"{"}} | \ : ' , ? / ` ~ " ( ) ; )</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="(validator['password'].errors?.['minlength'] ||validator['password'].errors?.['maxlength']) && !(validator['password'].errors?.['pattern'])">
+                            Password must be
+                            between 8-30 characters.</span>
+                    </div>
                 </div>
                 <!-- End Password -->
             </div>
             <!-- End Second Row -->
 
             <!-- Third Row -->
-            <div class="row">
+            <div class="row m-auto">
                 <!-- Phone Number -->
                 <div class="col-12 col-sm-6">
                     <div class="form-group mt-3">
                         <label for="PhoneNumber" class="fw-bold ">Phone Number<span class="text-danger">
                                 *</span></label>
-                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" formControlName="phoneNumber"
-                        [ngClass]="{'border-danger':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmited)}">
+                        <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number"
+                            formControlName="phoneNumber"
+                            [ngClass]="{'border-danger':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmited)}">
                     </div>
-                     <!-- validation for phoneNumber number  -->
-                  <div
-                  *ngIf="validator['phoneNumber'].invalid && (isSubmited || validator['phoneNumber'].touched||validator['phoneNumber'].dirty )">
-                  <span class="text-danger fs-7" *ngIf="validator['phoneNumber'].errors?.['required']"> This Field Is
-                    Required</span>
-                  <span class="text-danger fs-7" *ngIf="validator['phoneNumber'].errors?.['pattern']"> Contact Number
-                    must
-                    contain only numbers.</span>
-                  <span class="text-danger fs-7"
-                    *ngIf="(validator['phoneNumber'].errors?.['maxlength'] || validator['phoneNumber'].errors?.['minlength']) && !(validator['phoneNumber'].errors?.['pattern'])">
-                    Contact Number must be 10 numbers.</span>
-                </div>
+                    <!-- validation for phoneNumber number  -->
+                    <div
+                        *ngIf="validator['phoneNumber'].invalid && (isSubmited || validator['phoneNumber'].touched||validator['phoneNumber'].dirty )">
+                        <span class="text-danger fs-8" *ngIf="validator['phoneNumber'].errors?.['required']"> This
+                            Field
+                            Is
+                            Required</span>
+                        <span class="text-danger fs-8" *ngIf="validator['phoneNumber'].errors?.['pattern']"> Contact
+                            Number
+                            must
+                            contain only numbers.</span>
+                        <span class="text-danger fs-8"
+                            *ngIf="(validator['phoneNumber'].errors?.['maxlength'] || validator['phoneNumber'].errors?.['minlength']) && !(validator['phoneNumber'].errors?.['pattern'])">
+                            Contact Number must be 10 numbers.</span>
+                    </div>
                 </div>
                 <!-- End Phone Number -->
                 <!-- userType -->
@@ -149,92 +169,107 @@
                     <div class="form-group mt-3">
                         <label for="Password" class="fw-bold ">Select User Type <span class="text-danger">
                                 *</span></label>
-                        <ng-select  formControlName="userRoll" (change)="changeUserType($event)"
-                        [ngClass]="{'border-danger':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmited)}">
+                        <ng-select formControlName="userRoll" (change)="changeUserType($event)"
+                            [ngClass]="{'border-danger':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmited)}">
                             <ng-option value="" disabled>Select userType</ng-option>
-                            <ng-option *ngFor="let user of userTypeList" [value]="user.usertype">{{user.usertype}}</ng-option>
+                            <ng-option *ngFor="let user of userTypeList"
+                                [value]="user.usertype">{{user.usertype}}</ng-option>
                         </ng-select>
                     </div>
                     <!-- validation for select user -->
-                  <div
-                  *ngIf="validator['userRoll'].invalid && (isSubmited || validator['userRoll'].touched ||validator['userRoll'].dirty )">
-                  <span class="text-danger fs-7" *ngIf="validator['userRoll'].errors?.['required']"> This Field Is
-                    Required</span>
-                </div>
+                    <div
+                        *ngIf="validator['userRoll'].invalid && (isSubmited || validator['userRoll'].touched ||validator['userRoll'].dirty )">
+                        <span class="text-danger fs-7" *ngIf="validator['userRoll'].errors?.['required']"> This
+                            Field Is
+                            Required</span>
+                    </div>
                 </div>
                 <!-- End userType -->
             </div>
             <!-- End Third Row -->
 
             <!-- Four  Row -->
-            <div class="row">
+            <div class="row m-auto">
                 <!-- Select Country -->
                 <div class="col-12 col-sm-12">
                     <div class="form-group mt-3">
-                        <label for="Country" class="fw-bold ">Select Country<span class="text-danger"> *</span></label>
-                        <ng-select  formControlName="countryId" (change)="changeCountry($event)"
-                        [ngClass]="{'border-danger':validator['countryId'].invalid && (validator['countryId'].touched||isSubmited)}">
+                        <label for="Country" class="fw-bold ">Select Country<span class="text-danger">
+                                *</span></label>
+                        <ng-select formControlName="countryId" (change)="changeCountry($event)"
+                            [ngClass]="{'border-danger':validator['countryId'].invalid && (validator['countryId'].touched||isSubmited)}">
                             <ng-option value="" disabled>Select Country</ng-option>
-                            <ng-option *ngFor="let user of countryList" [value]="user.countryId">{{user.countryName}}</ng-option>
+                            <ng-option *ngFor="let user of countryList"
+                                [value]="user.countryId">{{user.countryName}}</ng-option>
                         </ng-select>
                     </div>
                     <div
-                    *ngIf="validator['countryId'].invalid && (isSubmited || validator['countryId'].touched ||validator['countryId'].dirty)">
-                    <span class="text-danger" *ngIf="validator['countryId'].errors?.['required']"> This Field Is
-                      Required</span>
-                  </div>
+                        *ngIf="validator['countryId'].invalid && (isSubmited || validator['countryId'].touched ||validator['countryId'].dirty)">
+                        <span class="text-danger fs-8" *ngIf="validator['countryId'].errors?.['required']"> This Field
+                            Is
+                            Required</span>
+                    </div>
                 </div>
                 <!-- End Select Country  -->
                 <!-- Select State -->
                 <div class="col-6 col-sm-6">
                     <div class="form-group mt-3">
-                                <div class="form-group mt-3">
-                                    <label for="state" class="fw-bold ">Select State<span class="text-danger"> *</span></label>
-                                    <ng-select formControlName="stateId"  (change)="changeState($event)"
-                                    [ngClass]="{'border-danger':validator['stateId'].invalid && (validator['stateId'].touched||isSubmited)}">
-                                        <ng-option value="" disabled>Select State</ng-option>
-                                        <ng-option *ngFor="let user of stateList" [value]="user.stateId">{{user.stateName}}</ng-option>
-                                    </ng-select>
-                              
-                                    <!-- validation for select state @author amresh prasad -->
-                  <div
-                  *ngIf="validator['stateId'].invalid && (isSubmited || validator['stateId'].touched||validator['stateId'].dirty )">
-                  <span class="text-danger" *ngIf="validator['stateId'].errors?.['required']"> This Field Is
-                    Required</span>
-                </div></div>
+                        <div class="form-group mt-3">
+                            <label for="state" class="fw-bold ">Select State<span class="text-danger">
+                                    *</span></label>
+                            <ng-select formControlName="stateId" (change)="changeState($event)"
+                                [ngClass]="{'border-danger':validator['stateId'].invalid && (validator['stateId'].touched||isSubmited)}">
+                                <ng-option value="" disabled>Select State</ng-option>
+                                <ng-option *ngFor="let user of stateList"
+                                    [value]="user.stateId">{{user.stateName}}</ng-option>
+                            </ng-select>
+
+                            <!-- validation for select state @author amresh prasad -->
+                            <div
+                                *ngIf="validator['stateId'].invalid && (isSubmited || validator['stateId'].touched||validator['stateId'].dirty )">
+                                <span class="text-danger fs-8" *ngIf="validator['stateId'].errors?.['required']"> This
+                                    Field
+                                    Is
+                                    Required</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- End State -->
                 <!-- Select City -->
                 <div class="col-6 col-sm-6">
                     <div class="form-group mt-3">
-                                <div class="form-group mt-3">
-                                    <label for="City" class="fw-bold ">Select City<span class="text-danger"> *</span></label>
-                                    <ng-select  formControlName="cityId"  [ngClass]="{'border-danger':validator['cityId'].invalid && (validator['cityId'].touched||isSubmited)}" >
-                                        <ng-option value="" disabled>Select City</ng-option>
-                                        <ng-option *ngFor="let user of cityList" [value]="user.cityId">{{user.cityName}}</ng-option>
-                                    </ng-select>
-                                </div>
+                        <div class="form-group mt-3">
+                            <label for="City" class="fw-bold ">Select City<span class="text-danger">
+                                    *</span></label>
+                            <ng-select formControlName="cityId"
+                                [ngClass]="{'border-danger':validator['cityId'].invalid && (validator['cityId'].touched||isSubmited)}">
+                                <ng-option value="" disabled>Select City</ng-option>
+                                <ng-option *ngFor="let user of cityList"
+                                    [value]="user.cityId">{{user.cityName}}</ng-option>
+                            </ng-select>
+                        </div>
                     </div>
                     <!-- validation for Select city -->
-                  <div
-                  *ngIf="validator['cityId'].invalid && (isSubmited || validator['cityId'].touched||validator['cityId'].dirty )">
-                  <span class="text-danger" *ngIf="validator['cityId'].errors?.['required']"> This Field Is
-                    Required</span>
-                </div>
+                    <div
+                        *ngIf="validator['cityId'].invalid && (isSubmited || validator['cityId'].touched||validator['cityId'].dirty )">
+                        <span class="text-danger fs-8" *ngIf="validator['cityId'].errors?.['required']"> This Field Is
+                            Required</span>
+                    </div>
                 </div>
                 <!-- End City -->
             </div>
             <!-- End Four Row -->
             <!-- status section -->
-            <div class="row">
-                <div class="col-12 mt-4 mt-lg-5">
-                   <span class="fw-bold d-flex align-items-center">Note: <span class="fw-lighter fs-7 ms-1"> {{noteMessage}}  </span></span> 
+            <div class="row m-auto">
+                <div class="col-12 mt-3 mt-lg-4">
+                    <span class="fw-bold d-flex align-items-center">Note: <span class="fw-lighter fs-7 ms-1">
+                            {{noteMessage}} </span></span>
+                </div>
+                <div class="button my-5 my-lg-3 d-flex justify-content-center justify-content-sm-start">
+                    <button type="submit" class="btn btn-primary btn-gradient border-0 ">Sign Up</button>
                 </div>
             </div>
-            <div class="button my-5 my-lg-3 d-flex justify-content-center justify-content-sm-start">
-                <button type="submit" class="btn btn-primary btn-gradient border-0 ">Sign Up</button>
-            </div>
+
         </form>
     </div>
 </section>

@@ -5,7 +5,7 @@
     .picsum-img-wrapper {
         height: $carousel-img-height;
 
-        @media (max-width: 576px) {
+        @media (max-width:$Small-sm) {
             height: $carousel-img-height-sm;
         }
 
@@ -22,7 +22,7 @@
         .text-user-name {
             font-size: $carousel-text-user-name;
 
-            @media (max-width: 576px) {
+            @media (max-width: $Small-sm) {
                 font-size: $carousel-text-user-name-sm;
             }
         }
@@ -36,7 +36,7 @@
         }
 
         button {
-            @media (max-width: 576px) {
+            @media (max-width:$Small-sm) {
                 padding-left: $btn-padding-left-sm;
                 padding-right: $btn-padding-right-sm;
             }
