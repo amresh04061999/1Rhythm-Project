@@ -6,11 +6,12 @@ import { LoaderComponent } from './component/loader/loader.component';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth/auth.service';
 import { LoaderService } from './services/loader/loader.service';
-import {OverlayModule} from '@angular/cdk/overlay';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { ProfileMenuComponent } from './component/profile-menu/profile-menu.component';
 import { OverlayService } from './services/overlay/overlay.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './services/auth/auth.guard';
+import { AuthInterceptor } from './services/interceptor/auth.interceptor';
 @NgModule({
   declarations: [
     MasterComponent,
@@ -25,6 +26,8 @@ import { AuthGuard } from './services/auth/auth.guard';
     HttpClientModule
   ],
   exports: [LoaderComponent,],
-  providers: [AuthService, LoaderService,OverlayService,AuthGuard]
+  providers: [AuthService, LoaderService, OverlayService, AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ]
 })
 export class CoreModule { }
