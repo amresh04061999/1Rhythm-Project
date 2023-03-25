@@ -11,13 +11,25 @@ export class AuthService {
   constructor(private _httpServices: HttpClient) {
     this.baseUrl = environment.baseURL;
   }
-  userLogin(userLogin: userLogin): Observable<userLogin> {
-    return this._httpServices.post<userLogin>(`${this.baseUrl}userlogin`, userLogin)
-  }
+  /**
+   * Get User Details
+   * @returns 
+   */
   getUserDeatils(): Observable<Users[]> {
     return this._httpServices.get<Users[]>(`${this.baseUrl}users`)
   }
+  /**
+   * Get-user-details
+   * @returns 
+   */
   userget() {
     return localStorage.getItem('authentication')
+  }
+  /**
+   * user Logout
+   * @returns
+   */
+  logout() {
+    return localStorage.clear();
   }
 }

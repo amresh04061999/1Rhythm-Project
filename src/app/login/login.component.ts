@@ -34,24 +34,15 @@ export class LoginComponent implements OnInit {
     })
   }
   public login() {
-    this.isSubmited=true;
-    if(this.userLogin.valid){
+    this.isSubmited = true;
+    if (this.userLogin.valid) {
       this.registrationList.find((item) => {
         if (item.email == this.userLogin.value.email && item.password == this.userLogin.value.password) {
-          localStorage.setItem('authentication',JSON.stringify(item));
+          localStorage.setItem('authentication', JSON.stringify(item));
           this.router.navigateByUrl('/home')
         }
       })
     }
-  
-    // if(this.userLogin.value.email == this.registrationList[0].email && this.userLogin.value.password == this.registrationList[0].password){
-    // // localStorage.setItem('authentication','hello');
-    // // this.router.navigateByUrl('/home')
-    // // console.log('true');
-
-    // }
-
-
   }
   /**
  * short message
