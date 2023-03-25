@@ -48,9 +48,10 @@
       <div class="d-flex align-items-center justify-content-between mt-4">
         <div class="d-flex align-items-center">
           <div class="profile-image overflow-hidden cursor-pointer ms-3 me-3">
-            <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto" />
+            <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto"
+              (click)="opendown()" />
           </div>
-          <h4 class="text-dark fs-7 cursor-pointer">Amresh Prasad</h4>
+          <h4 class="text-dark fs-7 cursor-pointer" (click)="opendown()">Amresh Prasad</h4>
         </div>
         <span class="icon-chevron-down text-black  pe-4" (click)="opendown()"></span>
       </div>
@@ -70,16 +71,16 @@
             </div>
           </li>
           <li class="nav-item d-flex align-items-center">
-            <span class="icon-profile fs-2 ms-4"></span>
+            <span class="icon-profile fs-4 ms-4"></span>
             <a class="nav-link" routerLink="/manage-profile">Manage Profile</a>
           </li>
           <li class="nav-item d-flex align-items-center ">
-            <span class="icon-manage-studio fs-3 ms-4"></span>
+            <span class="icon-manage-studio fs-4 ms-4"></span>
             <a class="nav-link" routerLink="studio/manage-studio">Manage Studio Profile</a>
           </li>
           <li class="nav-item d-flex align-items-center ">
-            <span class="icon-log-out fs-2 ms-4"></span>
-            <a class="nav-link">Log out</a>
+            <span class="icon-log-out fs-4 ms-4"></span>
+            <a (click)="logOut()" class="nav-link">Log out</a>
           </li>
         </ul>
       </div>

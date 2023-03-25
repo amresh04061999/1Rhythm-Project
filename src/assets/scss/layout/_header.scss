@@ -26,6 +26,8 @@ header {
 
         .nav {
             .nav-item {
+                transition: all 0.5s ease-in-out;
+
                 &:hover {
                     background-color: lighten($color: $primary, $amount: 40);
 
