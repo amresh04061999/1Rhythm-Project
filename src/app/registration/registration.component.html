@@ -31,7 +31,7 @@
                     <div class="form-group mt-3">
                         <label for="FirstName" class="fw-bold ">First Name <span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="FirstName" placeholder="First Name" formControlName="firstName"
-                        [ngClass]="{'invalid':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmited)}">
+                        [ngClass]="{'border-danger':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmited)}">
                     </div>
                     <!-- Validation For firstName  -->
                   <div
@@ -52,7 +52,7 @@
                     <div class="form-group mt-3">
                         <label for="LastName" class="fw-bold ">Last Name <span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="LastName" placeholder="Last Name" formControlName="lastName"
-                        [ngClass]="{'invalid-border':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmited)}">
+                        [ngClass]="{'border-danger':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmited)}">
                     </div>
                    <!-- Validation for lastName -->
                   <div
@@ -77,7 +77,7 @@
                     <div class="form-group mt-3">
                         <label for="EmailID" class="fw-bold ">Email Id<span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="EmailID" placeholder="Email ID" formControlName="email"
-                        [ngClass]="{'invalid-border':validator['email'].invalid && (validator['email'].touched||isSubmited)}">
+                        [ngClass]="{'border-danger':validator['email'].invalid && (validator['email'].touched||isSubmited)}">
                     </div> 
                     <!-- validation for email  -->
                   <div
@@ -99,7 +99,7 @@
                     <div class="form-group mt-3">
                         <label for="Password" class="fw-bold ">Password <span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="Password" placeholder="Password" formControlName="password"
-                        [ngClass]="{'invalid-border':validator['password'].invalid && (validator['password'].touched||isSubmited)}" >
+                        [ngClass]="{'border-danger':validator['password'].invalid && (validator['password'].touched||isSubmited)}" >
                     </div>
                    <!-- password validation -->
                   <div
@@ -128,7 +128,7 @@
                         <label for="PhoneNumber" class="fw-bold ">Phone Number<span class="text-danger">
                                 *</span></label>
                         <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number" formControlName="phoneNumber"
-                        [ngClass]="{'invalid':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmited)}">
+                        [ngClass]="{'border-danger':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmited)}">
                     </div>
                      <!-- validation for phoneNumber number  -->
                   <div
@@ -149,8 +149,8 @@
                     <div class="form-group mt-3">
                         <label for="Password" class="fw-bold ">Select User Type <span class="text-danger">
                                 *</span></label>
-                        <ng-select placeholder="Select UserType" formControlName="userRoll" (change)="changeUserType($event)"
-                        [ngClass]="{'invalid-border':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmited)}">
+                        <ng-select  formControlName="userRoll" (change)="changeUserType($event)"
+                        [ngClass]="{'border-danger':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmited)}">
                             <ng-option value="" disabled>Select userType</ng-option>
                             <ng-option *ngFor="let user of userTypeList" [value]="user.usertype">{{user.usertype}}</ng-option>
                         </ng-select>
@@ -173,7 +173,7 @@
                     <div class="form-group mt-3">
                         <label for="Country" class="fw-bold ">Select Country<span class="text-danger"> *</span></label>
                         <ng-select  formControlName="countryId" (change)="changeCountry($event)"
-                        [ngClass]="{'invalid-border':validator['countryId'].invalid && (validator['countryId'].touched||isSubmited)}">
+                        [ngClass]="{'border-danger':validator['countryId'].invalid && (validator['countryId'].touched||isSubmited)}">
                             <ng-option value="" disabled>Select Country</ng-option>
                             <ng-option *ngFor="let user of countryList" [value]="user.countryId">{{user.countryName}}</ng-option>
                         </ng-select>
@@ -190,8 +190,8 @@
                     <div class="form-group mt-3">
                                 <div class="form-group mt-3">
                                     <label for="state" class="fw-bold ">Select State<span class="text-danger"> *</span></label>
-                                    <ng-select formControlName="stateId"    (change)="changeState($event)"
-                                    [ngClass]="{'invalid-border':validator['stateId'].invalid && (validator['stateId'].touched||isSubmited)}">
+                                    <ng-select formControlName="stateId"  (change)="changeState($event)"
+                                    [ngClass]="{'border-danger':validator['stateId'].invalid && (validator['stateId'].touched||isSubmited)}">
                                         <ng-option value="" disabled>Select State</ng-option>
                                         <ng-option *ngFor="let user of stateList" [value]="user.stateId">{{user.stateName}}</ng-option>
                                     </ng-select>
@@ -210,7 +210,7 @@
                     <div class="form-group mt-3">
                                 <div class="form-group mt-3">
                                     <label for="City" class="fw-bold ">Select City<span class="text-danger"> *</span></label>
-                                    <ng-select  formControlName="cityId"  [ngClass]="{'invalid-border':validator['cityId'].invalid && (validator['cityId'].touched||isSubmited)}" >
+                                    <ng-select  formControlName="cityId"  [ngClass]="{'border-danger':validator['cityId'].invalid && (validator['cityId'].touched||isSubmited)}" >
                                         <ng-option value="" disabled>Select City</ng-option>
                                         <ng-option *ngFor="let user of cityList" [value]="user.cityId">{{user.cityName}}</ng-option>
                                     </ng-select>

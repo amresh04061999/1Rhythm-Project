@@ -4,12 +4,13 @@ import { MasterComponent } from './component/master/master.component';
 import { HeaderComponent } from './component/header/header.component';
 import { LoaderComponent } from './component/loader/loader.component';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from './services/auth/auth.guard';
 import { AuthService } from './services/auth/auth.service';
 import { LoaderService } from './services/loader/loader.service';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { ProfileMenuComponent } from './component/profile-menu/profile-menu.component';
 import { OverlayService } from './services/overlay/overlay.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './services/auth/auth.guard';
 @NgModule({
   declarations: [
     MasterComponent,
@@ -20,9 +21,10 @@ import { OverlayService } from './services/overlay/overlay.service';
   imports: [
     CommonModule,
     RouterModule,
-    OverlayModule
+    OverlayModule,
+    HttpClientModule
   ],
   exports: [LoaderComponent,],
-  providers: [AuthGuard, AuthService, LoaderService,OverlayService]
+  providers: [AuthService, LoaderService,OverlayService,AuthGuard]
 })
 export class CoreModule { }
