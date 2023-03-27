@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { OverlayService } from '../../services/overlay/overlay.service';
@@ -9,12 +9,16 @@ import { ProfileMenuComponent } from '../profile-menu/profile-menu.component';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   public isOpen: boolean;
   public isDown: boolean;
+  public getSingleUser: any;
   constructor(private _overlaySevices: OverlayService, private _userService: AuthService, private router: Router) {
     this.isDown = false;
     this.isOpen = true;
+  }
+  ngOnInit(): void {
+    this.getSingleusers();
   }
   /**
    * 
@@ -42,4 +46,10 @@ export class HeaderComponent {
     this.router.navigateByUrl('/login')
   }
 
+  public getSingleusers() {
+    this.getSingleUser = this._userService.userget();
+    this.getSingleUser = JSON.parse(this.getSingleUser)
+
+
+  }
 }

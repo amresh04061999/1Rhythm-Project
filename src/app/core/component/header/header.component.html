@@ -13,13 +13,15 @@
           <img src="./../../../../assets/images/home.svg" alt="home-icon" />
           <a routerLink="/"><span class="nav-link  ms-0 text-primary">Home</span></a>
         </li>
-        <li class="nav-item d-flex align-items-center ">
+        <li class="nav-item d-flex align-items-center "
+          [ngClass]="getSingleUser.userRoll === 'Artist'?'d-none':'d-block'">
           <img src="./../../../../assets/images/Studio.svg" alt="studio-icon" />
           <a routerLink="studio/studio-list"><span class="nav-link fw-light ">Studio</span></a>
         </li>
-        <li class="nav-item d-flex align-items-center ">
+        <li class="nav-item d-flex align-items-center "
+          [ngClass]="getSingleUser.userRoll === 'Studio Owner'?'d-none':'d-block'">
           <img src="./../../../../assets/images/noun-artist-1191144 1.svg" alt="Artist-icon" />
-          <a routerLink="artist/artist-list"><span class="nav-link fw-light ">Artist</span></a>
+          <a routerLink="artist/artist-list"><span class="nav-link fw-light">Artist</span></a>
         </li>
         <li class="nav-item d-flex align-items-center ms-4">
           <img src="./../../../../assets/images/noun-calendar-2095603 4.svg" alt="BookingHistory-icon" />
@@ -28,9 +30,14 @@
       </ul>
     </div>
     <!-- Profile Image -->
-    <div class="profile-image overflow-hidden d-none d-md-block me-3 cursor-pointer">
-      <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto"
-        (click)="OpenProfileMenu()" />
+    <div class=" d-flex align-items-center">
+      <h4 class="text-dark fs-7 cursor-pointer d-none d-md-block  me-4">{{getSingleUser.firstName}}</h4>
+      <div class="profile-image overflow-hidden d-none d-md-block me-3 cursor-pointer">
+        <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto"
+          (click)="OpenProfileMenu()" *ngIf="!getSingleUser" />
+        <img [src]="getSingleUser.profilePicture" alt="profile-image" class="w-100 h-100" (click)="OpenProfileMenu()" />
+
+      </div>
     </div>
     <!-- desktop -->
     <!-- mobile -->
@@ -48,10 +55,12 @@
       <div class="d-flex align-items-center justify-content-between mt-4">
         <div class="d-flex align-items-center">
           <div class="profile-image overflow-hidden cursor-pointer ms-3 me-3">
-            <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-auto"
-              (click)="opendown()" />
+            <img src="./../../../../assets/images/Profile.png" alt="profile-image" class="w-100 h-100"
+              (click)="opendown()" *ngIf="!getSingleUser" />
+            <img [src]="getSingleUser.profilePicture" alt="profile-image" class="w-100 h-100" (click)="opendown()" />
+
           </div>
-          <h4 class="text-dark fs-7 cursor-pointer" (click)="opendown()">Amresh Prasad</h4>
+          <h4 class="text-dark fs-7 cursor-pointer" (click)="opendown()">{{getSingleUser.firstName}}</h4>
         </div>
         <span class="icon-chevron-down text-black  pe-4" (click)="opendown()"></span>
       </div>
@@ -60,7 +69,8 @@
       <!-- profile Menu -->
       <div class="text-black mt-3" [ngClass]="isDown ?'d-block':'d-none'">
         <ul class="nav  d-flex flex-column">
-          <li class="nav-item d-flex align-items-center">
+          <li class="nav-item d-flex align-items-center cursor-pointer"
+            [ngClass]="getSingleUser.userRoll === 'General User'?'d-none':'d-block'">
             <span class="icon-search fs-2 ms-4"></span>
             <div class="d-flex align-items-center">
               <a href="" class="nav-link">Available</a>
@@ -70,15 +80,21 @@
               </div>
             </div>
           </li>
-          <li class="nav-item d-flex align-items-center">
+          <li class="nav-item d-flex align-items-center cursor-pointer">
             <span class="icon-profile fs-4 ms-4"></span>
             <a class="nav-link" routerLink="/manage-profile">Manage Profile</a>
           </li>
-          <li class="nav-item d-flex align-items-center ">
+          <li class="nav-item d-flex align-items-center cursor-pointer"
+            [ngClass]="getSingleUser.userRoll === 'General User'|| getSingleUser.userRoll === 'Artist' ?'d-none':'d-block'">
             <span class="icon-manage-studio fs-4 ms-4"></span>
             <a class="nav-link" routerLink="studio/manage-studio">Manage Studio Profile</a>
           </li>
-          <li class="nav-item d-flex align-items-center ">
+          <li class="nav-item d-flex align-items-center cursor-pointer"
+            [ngClass]="getSingleUser.userRoll === 'General User'|| getSingleUser.userRoll === 'Studio Owner'?'d-none':'d-block'">
+            <span class="icon-manage-studio fs-4 ms-4"></span>
+            <a class="nav-link" routerLink="artist/manage-artist">Manage Artist Profile</a>
+          </li>
+          <li class="nav-item d-flex align-items-center cursor-pointer">
             <span class="icon-log-out fs-4 ms-4"></span>
             <a (click)="logOut()" class="nav-link">Log out</a>
           </li>
@@ -93,25 +109,19 @@
             <span class=" icon-home text-black ms-4"></span>
             <a routerLink="/"><span class="nav-link fw-light text-primary ms-1 ">Home</span></a>
           </li>
-          <li class="nav-item d-flex align-items-center cursor-pointer">
+          <li class="nav-item d-flex align-items-center cursor-pointer"
+            [ngClass]="getSingleUser.userRoll === 'Artist'?'d-none':'d-block'">
             <span class=" icon-Studio text-black ms-4"></span>
             <a routerLink="studio/studio-list"><span class="nav-link ">Studio</span></a>
           </li>
-          <li class="nav-item d-flex align-items-center cursor-pointer">
+          <li class="nav-item d-flex align-items-center cursor-pointer"
+            [ngClass]="getSingleUser.userRoll === 'Studio Owner'?'d-none':'d-block'">
             <span class=" icon-Artist text-black ms-4"></span>
-            <a routerLink="artist/artist-list"><span class="nav-link ">Artist</span></a>
+            <a routerLink="artist/artist-list"><span class="nav-link">Artist</span></a>
           </li>
           <li class="nav-item d-flex align-items-center cursor-pointer">
             <span class=" icon-Artist text-black ms-4"></span>
-            <a routerLink="/login"><span class="nav-link ">login</span></a>
-          </li>
-          <li class="nav-item d-flex align-items-center cursor-pointer">
-            <span class=" icon-Artist text-black ms-4"></span>
-            <a routerLink="/ragistration"><span class="nav-link ">Registration</span></a>
-          </li>
-          <li class="nav-item d-flex align-items-center cursor-pointer ">
-            <span class="icon-calender text-black ms-4"></span>
-            <a routerLink="/booking-history"><span class="nav-link  ">Booking History</span></a>
+            <a routerLink="/login"><span class="nav-link ">Booking History</span></a>
           </li>
         </ul>
       </div>

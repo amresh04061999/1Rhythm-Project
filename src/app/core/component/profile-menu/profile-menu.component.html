@@ -2,7 +2,8 @@
 <div class="profile-menu-wrapper bg-white position-absolute rounded ">
     <div class="profile-menu my-2 mx-2 cursor-pointer">
         <ul class="nav">
-            <li class="nav-item d-flex align-items-center w-100 p-1">
+            <li class="nav-item d-flex align-items-center w-100 p-1"
+                [ngClass]=" getSingleUser.userRoll === 'General User'?'d-none':'d-block'">
                 <span class="icon-search fs-4"></span>
                 <div class="d-flex align-items-center">
                     <a href="" class="nav-link">Available</a>
@@ -16,9 +17,15 @@
                 <span class="icon-profile fs-4"></span>
                 <a class="nav-link" routerLink="/manage-profile">Manage Profile</a>
             </li>
-            <li class="nav-item d-flex align-items-center  w-100 p-1">
+            <li class="nav-item d-flex align-items-center  w-100 p-1"
+                [ngClass]="getSingleUser.userRoll === 'Artist' || getSingleUser.userRoll === 'General User'?'d-none':'d-block'">
                 <span class="icon-manage-studio fs-4"></span>
                 <a class="nav-link" routerLink="studio/manage-studio">Manage Studio Profile</a>
+            </li>
+            <li class="nav-item d-flex align-items-center  w-100 p-1"
+                [ngClass]="getSingleUser.userRoll === 'Studio Owner' || getSingleUser.userRoll === 'General User'?'d-none':'d-block'">
+                <span class="icon-manage-studio fs-4"></span>
+                <a class="nav-link" routerLink="artist/manage-artist">Manage Artist Profile</a>
             </li>
             <li class="nav-item d-flex align-items-center  w-100 p-1">
                 <span class="icon-log-out fs-4"></span>
