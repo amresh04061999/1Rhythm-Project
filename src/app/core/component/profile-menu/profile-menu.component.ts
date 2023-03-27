@@ -9,21 +9,28 @@ import { OverlayService } from '../../services/overlay/overlay.service';
   styleUrls: ['./profile-menu.component.scss']
 })
 export class ProfileMenuComponent implements OnInit {
-  public getSingleUser: any;
-  constructor(private _userService: AuthService, private overlayServec: OverlayService, private router: Router) {
+  public getUser: any;
+  constructor(private _userService: AuthService, private overlayService: OverlayService, private router: Router) {
 
   }
   ngOnInit(): void {
-    this.getSingleusers()
+    this.getSingleUsers()
   }
+  /**
+   * logOut user and redirect login
+   */
   public logOut() {
     this._userService.logout();
-    this.overlayServec.close();
+    this.overlayService.close();
     this.router.navigateByUrl('/login')
   }
-  public getSingleusers() {
-    this.getSingleUser = this._userService.userget();
-    this.getSingleUser = JSON.parse(this.getSingleUser)
+  /**
+ *  get user Details in  AuthService  or set roll
+ * 
+ */
+  public getSingleUsers() {
+    this.getUser = this._userService.getLoginData();
+    this.getUser = JSON.parse(this.getUser)
   }
 
 }

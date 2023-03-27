@@ -14,6 +14,9 @@ export class LoaderComponent {
   }
 
   ngOnInit() {
+    /**
+     * show and hide loader using LoaderService 
+     */
     this._loaderService.loadState.subscribe(res => {
       this.show = res;
     });

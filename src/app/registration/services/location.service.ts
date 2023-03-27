@@ -11,21 +11,21 @@ export class LocationService {
     this.baseUrl=environment.baseURL;
   }
 /**
- * getCountry
+ * getCountry in DataBase
  * @returns 
  */
-  getcountry():Observable<Country[]>{
+  getCountry():Observable<Country[]>{
    return this._httpService.get<Country[]>(`${this.baseUrl}country`)
   }
   /**
-   * get State
+   * get State  in DataBase
    * @returns 
    */
   getState():Observable<State[]>{
    return this._httpService.get<State[]>(`${this.baseUrl}state`)
   }
   /**
-   * getCity
+   * getCity  in DataBase
    * @returns 
    */
   getCity():Observable<City[]>{

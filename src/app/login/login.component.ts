@@ -11,10 +11,10 @@ import { Users } from '../registration/model/Registration.model';
 })
 export class LoginComponent implements OnInit {
   public userLogin: FormGroup;
-  public isSubmited: boolean;
+  public isSubmitted: boolean;
   public registrationList: any[]
-  constructor(private fb: FormBuilder, private _userloginService: AuthService, private router: Router) {
-    this.isSubmited = false;
+  constructor(private fb: FormBuilder, private _userLoginService: AuthService, private router: Router) {
+    this.isSubmitted = false;
     this.registrationList = []
     this.userLogin = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(/^(?=.*?[_.]).*([a-z0-9])+@([a-z\-]{2,}\.)+[a-z\-]{2,4}$/)]],
@@ -24,17 +24,24 @@ export class LoginComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.getUserDeatils()
+    this.getUserDetails()
   }
-
-  public getUserDeatils() {
-    this._userloginService.getUserDeatils().subscribe((res) => {
+/**
+ * Get userDetails using AuthService
+ */
+  public getUserDetails() {
+    this._userLoginService.fetchUserDetails().subscribe((res) => {
       this.registrationList = res;
 
     })
   }
+  /**
+   * manually login a
+   * Set userDetails in localStorage
+   * and Redirect home
+   */
   public login() {
-    this.isSubmited = true;
+    this.isSubmitted = true;
     if (this.userLogin.valid) {
       this.registrationList.find((item) => {
         if (item.email == this.userLogin.value.email && item.password == this.userLogin.value.password) {
@@ -45,7 +52,7 @@ export class LoginComponent implements OnInit {
     }
   }
   /**
- * short message
+ * short Variable
  */
   get validator(): { [key: string]: AbstractControl<any> } {
     return this.userLogin.controls

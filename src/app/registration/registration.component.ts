@@ -13,9 +13,9 @@ import { UserService } from './services/user.service';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  
+  public nameValidator='^[a-zA-Z]+$'
   public users: FormGroup;
-  public isSubmited: boolean;
+  public isSubmitted: boolean;
   public imageFile!: File;
   public base64String: any;
   public imageValidationMessage: string;
@@ -32,7 +32,7 @@ export class RegistrationComponent implements OnInit {
     private _httpLocationService: LocationService,
     private router:Router,
   ) {
-    this.isSubmited = false;
+    this.isSubmitted = false;
     this.imageValidationMessage = '';
     this.userTypeList = [];
     this.countryList = [];
@@ -43,8 +43,8 @@ export class RegistrationComponent implements OnInit {
     this.noteMessage='General User';
     this.users = this._fb.group({
       id: [''],
-      firstName: ['', [Validators.required, Validators.maxLength(25), Validators.pattern('^[a-zA-Z]+$')]],
-      lastName: ['', [Validators.required, Validators.maxLength(25), Validators.pattern('^[a-zA-Z]+$')]],
+      firstName: ['', [Validators.required, Validators.maxLength(25), Validators.pattern(this.nameValidator)]],
+      lastName: ['', [Validators.required, Validators.maxLength(25), Validators.pattern(this.nameValidator)]],
       email: ['', [Validators.required,, Validators.maxLength(50), Validators.pattern(/^[A-Za-z0-9]([A-Za-z0-9\_\.]*)+@(([A-Za-z0-9-]{2,})+\.)+[A-Za-z\-]{2,4}$/)]],
       password: ['', [Validators.required,, Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$%*?&/\\\[\],'`~(\)^=+{\}?|;"\-:#_])[A-Za-z\d@$%*?&/\\\[\],'`~(\)^=+{\}?|;"\-:#_]{0,}$/), Validators.minLength(8), Validators.maxLength(30)]],
       phoneNumber: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern(/^[0-9]+$/)]],
@@ -56,13 +56,13 @@ export class RegistrationComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    // getuserType
+    // getUserType
     this.getUserType();
     // GetCountry
-    this.getcountry();
+    this.getCountry();
     // getState
     this.getState();
-    // getcity
+    // getCity
     this.getCity();
   }
   /**
@@ -76,17 +76,17 @@ export class RegistrationComponent implements OnInit {
     });
   }
   /**
-   * GetCountry
+   * Get all Country 
    */
-  public getcountry(): void {
-    this._httpLocationService.getcountry().subscribe((res: Country[]) => {
+  public getCountry(): void {
+    this._httpLocationService.getCountry().subscribe((res: Country[]) => {
       if (res) {
         this.countryList = res;
       }
     });
   }
   /**
-   * GetState
+   * Get all State
    */
   public getState(): void {
     this._httpLocationService.getState().subscribe((res: State[]) => {
@@ -96,7 +96,7 @@ export class RegistrationComponent implements OnInit {
     });
   }
   /**
-   * GetCity
+   * Get all City
    */
   public getCity(): void {
     this._httpLocationService.getCity().subscribe((res: City[]) => {
@@ -106,22 +106,25 @@ export class RegistrationComponent implements OnInit {
     });
   }
   /**
-   * Select UserType depend show message
-   * @param usertype
+   * Select UserType Show not depend of selected item
+   * @param userType
    */
-  public changeUserType(usertype:any): void {
-    if(usertype==1){
-      this.noteMessage='General User'
-    }else if(usertype==2){
-      this.noteMessage='Studio Owene'
-    }else if(usertype==3){
-      this.noteMessage='artist'
+  public changeUserType(userType:any): void {
+    switch (userType) {
+      case 1:
+        this.noteMessage='General User'
+        break;
+      case 2:this.noteMessage='Studio Owen'
+        break;
+      case 3: this.noteMessage='artist'
+        break;
+      default: this.noteMessage='General User'
+       ;
     }
-    
   }
   // Dependency
   /**
-   * state Change depend of select country
+   * State Change depend of selected country
    * @param countryId
    */
   public changeCountry(countryId: any): void {
@@ -130,7 +133,7 @@ export class RegistrationComponent implements OnInit {
        
   }
   /**
-   *  city Change Depend of select state
+   *  City Change Depend of selected state
    * @param cityId
    */
   public changeState(cityId: any): void {
@@ -139,16 +142,16 @@ export class RegistrationComponent implements OnInit {
      
   }
   /**
-   *
+   *Add user Details in database and redirect login
    */
   public registration(): void {
-    this.isSubmited=true
+    this.isSubmitted=true
     if(this.users.valid){
       this.users.controls['profilePicture'].setValue(this.base64String);
-      this._userService.adduser(this.users.value).subscribe((res:Users)=>{
+      this._userService.addUser(this.users.value).subscribe((res:Users)=>{
         if(res){
           this.router.navigateByUrl('/login')
-          this.isSubmited=false
+          this.isSubmitted=false
           this.base64String='';
         }
        
@@ -186,7 +189,7 @@ export class RegistrationComponent implements OnInit {
     };
   }
   /**
-   * short message
+   * short variable 
    */
    get validator():{[key:string]:AbstractControl<Users[]>}{
        return this.users.controls

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { userLogin } from 'src/app/login/model/userLogin.model';
 import { Users } from 'src/app/registration/model/Registration.model';
 import { environment } from 'src/environments/environment';
 
@@ -12,21 +11,21 @@ export class AuthService {
     this.baseUrl = environment.baseURL;
   }
   /**
-   * Get User Details
+   * Get User Details in database
    * @returns 
    */
-  getUserDeatils(): Observable<Users[]> {
+  fetchUserDetails(): Observable<Users[]> {
     return this._httpServices.get<Users[]>(`${this.baseUrl}users`)
   }
   /**
-   * Get-user-details
+   * Get-user-details in localStorage
    * @returns 
    */
-  userget() {
+  getLoginData() {
     return localStorage.getItem('authentication')
   }
   /**
-   * user Logout
+   * Clear user details in localStorage
    * @returns
    */
   logout() {
