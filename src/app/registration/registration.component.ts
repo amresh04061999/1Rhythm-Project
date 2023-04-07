@@ -109,7 +109,7 @@ export class RegistrationComponent implements OnInit {
    * Select UserType Show not depend of selected item
    * @param userType
    */
-  public changeUserType(userType:any): void {
+  public changeUserType(userType:number): void {
     switch (userType) {
       case 1:
         this.noteMessage='General User'
@@ -127,7 +127,7 @@ export class RegistrationComponent implements OnInit {
    * State Change depend of selected country
    * @param countryId
    */
-  public changeCountry(countryId: any): void {
+  public changeCountry(countryId: number): void {
        const SelectedId=countryId
       this.stateList= this.stateLists.filter((item)=> SelectedId == item.countryId)
        
@@ -136,9 +136,9 @@ export class RegistrationComponent implements OnInit {
    *  City Change Depend of selected state
    * @param cityId
    */
-  public changeState(cityId: any): void {
+  public changeState(cityId: number): void {
     const SelectedId=cityId
-    this.cityList= this.cityLists.filter((item)=> SelectedId == item.stateId)
+    this.cityList= this.cityLists.filter((item:City)=> SelectedId == item.stateId)
      
   }
   /**

@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-12 col-md-4 mt-4">
                 <div class="border p-2 p-sm-4">
-                    <h6 class="fw-bold my-3">Add Artist Images</h6>
-                    <!-- Select multple image using ngx-dropzone -->
-                    <div class=" Select-image-wrapper custom-dropzone" ngx-dropzone
+                    <h6 class="fw-bold my-3">Add Studio Images</h6>
+                    <!-- Select multiple image using ngx-dropzone -->
+                    <div class=" Select-image-wrapper custom-dropzone" ngx-dropzone (change)="selectImage($event)"
                         accept="image/jpeg,image/jpg,image/png,image/gif">
-                        <ngx-dropzone-label for="uploadimage">
+                        <ngx-dropzone-label for="uploadimage" >
                             <div class="d-flex flex-column align-items-center">
                                 <img class="mb-4" src="../../../assets/images/uploadImageIcon.png"
                                     alt="select-image-icon">
@@ -16,98 +16,28 @@
                                     <span class="text-primary">Upload Image</span>
                                     Or Just Drag And Drop</span>
                                 <span class="fs-7 text-gray">+ Add 5 Images</span>
-
                             </div>
                         </ngx-dropzone-label>
                     </div>
-                    <!--End  Select multple image using ngx-dropzone -->
+                    <!--End  Select multiple image using ngx-dropzone -->
                     <!-- preview  selected Image -->
                     <div class="row">
-                        <div class="col-6 col-sm-4 my-4 ">
+                        <div class="col-6 col-sm-4 my-4" *ngFor="let image of imageArray let i =index" >
                             <div class="image-wraperr  overflow-hidden rounded position-relative ">
                                 <input type="radio" name="coverImages" id="coverImage" class="d-none">
                                 <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
-                                        src="./../../../../assets/images/filled_heart.png" alt="">
+                                        src="./../../../../assets/images/filled_heart.png" alt="icon-heart">
                                 </div>
                                 <div class="set-delete-like-wrapper position-absolute ">
                                     <div class="action-btn">
-                                        
-                                        <span class="icon-delete-white fs-3"></span>
+                                        <span class="icon-delete-white fs-3" (click)="removeImage(i)"></span>
                                         <label for="coverImage">
                                             <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
                                         </div>
                                     </div>
-                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
+                                <img  src="{{image.image}}" class="w-100 h-100">
                             </div>
                         </div>
-                        <div class="col-6 col-sm-4 my-4 ">
-                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
-                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
-                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
-                                        src="./../../../../assets/images/filled_heart.png" alt="">
-                                </div>
-                                <div class="set-delete-like-wrapper position-absolute ">
-                                    <div class="action-btn">
-                                        
-                                        <span class="icon-delete-white fs-3"></span>
-                                        <label for="coverImage">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
-                                        </div>
-                                    </div>
-                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
-                            </div>
-                        </div> <div class="col-6 col-sm-4 my-4 ">
-                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
-                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
-                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
-                                        src="./../../../../assets/images/filled_heart.png" alt="">
-                                </div>
-                                <div class="set-delete-like-wrapper position-absolute ">
-                                    <div class="action-btn">
-                                        
-                                        <span class="icon-delete-white fs-3"></span>
-                                        <label for="coverImage">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
-                                        </div>
-                                    </div>
-                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 my-4 ">
-                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
-                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
-                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
-                                        src="./../../../../assets/images/filled_heart.png" alt="">
-                                </div>
-                                <div class="set-delete-like-wrapper position-absolute ">
-                                    <div class="action-btn">
-                                        
-                                        <span class="icon-delete-white fs-3"></span>
-                                        <label for="coverImage">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
-                                        </div>
-                                    </div>
-                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-4 my-4 ">
-                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
-                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
-                                <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
-                                        src="./../../../../assets/images/filled_heart.png" alt="">
-                                </div>
-                                <div class="set-delete-like-wrapper position-absolute ">
-                                    <div class="action-btn">
-                                        
-                                        <span class="icon-delete-white fs-3"></span>
-                                        <label for="coverImage">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
-                                        </div>
-                                    </div>
-                                <img src="./../../../../assets/images/artist-2.svg" class="w-100 h-100">
-                            </div>
-                        </div>
-                       
                     </div>
                     <!-- preview  selected Image -->
                 </div>
@@ -277,26 +207,26 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <input type="text" class="form-control ms-4" placeholder="Enter Amount"
-                                        [ngClass]="checkValue ? 'd-block' : 'd-none'" />
+                                        [ngClass]="checkValueArray[0] ? 'd-block' : 'd-none'" />
                                 </div>
                             </div>
 
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox" id="JammingRoom" #JammingRoom
+                                    <input class="form-check-input" type="checkbox"  #JammingRoom id="JammingRoom"
                                         (change)="checkBox(JammingRoom.id)" />
                                     <label class="form-check-label" for="JammingRoom">
                                         Jamming Room
                                     </label>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <input type="text" class="form-control ms-4" id="Address" placeholder="Enter Amount"
-                                        [ngClass]="checkValue1 ? 'd-block' : 'd-none'" />
+                                    <input type="text" class="form-control ms-4" placeholder="Enter Amount"
+                                        [ngClass]="checkValueArray[1] ? 'd-block' : 'd-none'" />
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox" id="Mixing" #Mixing
+                                    <input class="form-check-input" type="checkbox" #Mixing id="Mixing"
                                         (change)="checkBox(Mixing.id)" />
                                     <label class="form-check-label" for="Mixing">
                                         Mixing and Mastering Room
@@ -304,7 +234,7 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <input type="text" class="form-control ms-4" placeholder="Enter Amount"
-                                        [ngClass]="checkValue2 ? 'd-block' : 'd-none'" />
+                                        [ngClass]="checkValueArray[2] ? 'd-block' : 'd-none'" />
                                 </div>
                             </div>
                         </div>
