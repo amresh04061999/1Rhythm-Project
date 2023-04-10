@@ -5,7 +5,7 @@
             border: 2px dashed $primary;
             background-color: lighten($color:$gray, $amount:25.5);
         }
-        .image-wraperr{
+        .image-wrapper{
             width: 100%;
             height: 150px;
             img{
@@ -37,6 +37,7 @@
                 
               }
         }
+        
             input[type="radio"]:checked {
                 &~.set-delete-like-wrapper{
                   .action-btn{

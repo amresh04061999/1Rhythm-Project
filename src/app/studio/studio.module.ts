@@ -16,6 +16,7 @@ import { ManageStudioProfilePresentationComponent } from './manage-studio-profil
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SharedModule } from '../shared/shared.module';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     StudioRoutingModule,
     NgSelectModule,
     SharedModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    ReactiveFormsModule
   ]
 })
 export class StudioModule { }

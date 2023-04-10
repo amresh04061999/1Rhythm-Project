@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { City, Country, State } from '../shared/model/location.model';
 import { Users } from './model/Registration.model';
 import { UserType } from './model/UserType.model';
-import { LocationService } from './services/location.service';
+import { LocationService } from '../shared/services/location.service';
 import { UserService } from './services/user.service';
 
 @Component({

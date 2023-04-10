@@ -1,6 +1,6 @@
 <div class="manage-studio-wrapper h-100 p-3 p-sm-4 overflow-auto">
     <h5>Manage Studio Profile</h5>
-    <form action="">
+    <form [formGroup]="studioForm" (ngSubmit)="saveStudio()">
         <div class="row">
             <div class="col-12 col-md-4 mt-4">
                 <div class="border p-2 p-sm-4">
@@ -23,16 +23,17 @@
                     <!-- preview  selected Image -->
                     <div class="row">
                         <div class="col-6 col-sm-4 my-4" *ngFor="let image of imageArray let i =index" >
-                            <div class="image-wraperr  overflow-hidden rounded position-relative ">
-                                <input type="radio" name="coverImages" id="coverImage" class="d-none">
+                            <div class="image-wrapper overflow-hidden rounded position-relative ">
+                                <input type="radio" name="coverImages" id="coverImage{{i}}" class="d-none">
                                 <div class="svg-heart text-white fs-3 mx-1 position-absolute top-0 end-0"><img
                                         src="./../../../../assets/images/filled_heart.png" alt="icon-heart">
                                 </div>
                                 <div class="set-delete-like-wrapper position-absolute ">
                                     <div class="action-btn">
                                         <span class="icon-delete-white fs-3" (click)="removeImage(i)"></span>
-                                        <label for="coverImage">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span></label> 
+                                        <label for="coverImage{{i}}">
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span>
+                                        </label> 
                                         </div>
                                     </div>
                                 <img  src="{{image.image}}" class="w-100 h-100">
@@ -46,13 +47,14 @@
                 <div class="border p-4">
                     <h6 class="fw-bold my-2">Studio Details</h6>
                     <!-- First Row -->
+                    <fieldset formGroupName="personalDetails">
                     <div class="row">
                         <!-- Studio Name -->
                         <div class="col-12 col-sm-6">
                             <div class="form-group mt-3">
                                 <label for="StudioName" class="fw-bold">Studio Name <span class="text-danger">
                                         *</span></label>
-                                <input type="text" class="form-control" id="StudioName" placeholder="Studio Name" />
+                                <input type="text" class="form-control" id="StudioName" placeholder="Studio Name" formControlName="studioName" />
                             </div>
                         </div>
                         <!-- End  Studio Name -->
@@ -60,7 +62,7 @@
                         <div class="col-12 col-sm-6">
                             <div class="form-group mt-3">
                                 <label for="Address" class="fw-bold">Address <span class="text-danger"> *</span></label>
-                                <input type="text" class="form-control" id="Address" placeholder="Address" />
+                                <input type="text" class="form-control" id="Address" placeholder="Address" formControlName="address" />
                             </div>
                         </div>
                         <!-- End Address -->
@@ -73,7 +75,7 @@
                                 <label for="StudioDescription" class="fw-bold">Studio Description<span
                                         class="text-danger"> *</span></label>
                                 <textarea class="form-control" id="StudioDescription" rows="3"
-                                    placeholder="Studio Description"></textarea>
+                                    placeholder="Studio Description" formControlName="studioDescription"></textarea>
                             </div>
                         </div>
                         <!-- End  Studio Description -->
@@ -83,20 +85,22 @@
                                 <label for="Hardware&Equipments" class="fw-bold">Hardware & Equipments
                                     <span class="text-danger"> *</span></label>
                                 <textarea class="form-control" id="Hardware&Equipments"
-                                    placeholder="Hardware&Equipments" rows="3"></textarea>
+                                    placeholder="Hardware&Equipments" rows="3" formControlName="hardwareEquipments"></textarea>
                             </div>
                         </div>
                         <!-- End Hardware & Equipments -->
                     </div>
+                </fieldset>
                     <!-- End Second Row -->
                     <!-- Third  Row -->
+                    <fieldset formGroupName="location">
                     <div class="row">
                         <!-- Select Country -->
                         <div class="col-12 col-sm-6">
                             <div class="form-group mt-3">
                                 <label for="Country" class="fw-bold">Select Country<span class="text-danger">
                                         *</span></label>
-                                <ng-select placeholder="india">
+                                <ng-select placeholder="india" formControlName="country">
                                     <ng-option *ngFor="let user of userTypes" [value]="user.id">{{
                                         user.name
                                         }}</ng-option>
@@ -110,7 +114,7 @@
                                 <div class="form-group mt-3">
                                     <label for="state" class="fw-bold">Select State<span class="text-danger">
                                             *</span></label>
-                                    <ng-select placeholder="Select State">
+                                    <ng-select placeholder="Select State" formControlName="state">
                                         <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                             }}</ng-option>
                                     </ng-select>
@@ -124,7 +128,7 @@
                                 <div class="form-group mt-3">
                                     <label for="City" class="fw-bold">Select City<span class="text-danger">
                                             *</span></label>
-                                    <ng-select placeholder="Select City">
+                                    <ng-select placeholder="Select City"formControlName=city>
                                         <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                             }}</ng-option>
                                     </ng-select>
@@ -133,10 +137,13 @@
                         </div>
                         <!-- End City -->
                     </div>
+                </fieldset>
                     <!-- End Third Row -->
                     <!-- Four -->
                     <div class="row">
+                        
                         <div class="col-12 sm-col-6">
+                            <fieldset formGroupName="days">
                             <div class="row">
                                 <!-- Select From -->
                                 <label class="fw-bold mt-3">Select Studio Days<span class="text-danger">
@@ -144,7 +151,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="From" class="fw-bold">From</label>
-                                        <ng-select placeholder="From" id="From">
+                                        <ng-select placeholder="From" id="From" formControlName="fromDay">
                                             <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                                 }}</ng-option>
                                         </ng-select>
@@ -155,7 +162,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
-                                        <ng-select placeholder="To" id="To">
+                                        <ng-select placeholder="To" id="To" formControlName="toDay">
                                             <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                                 }}</ng-option>
                                         </ng-select>
@@ -163,8 +170,11 @@
                                 </div>
                                 <!-- End to -->
                             </div>
+                        </fieldset>
                         </div>
+                    
                         <div class="col-12 col-sm-12">
+                            <fieldset formGroupName="hours">
                             <div class="row">
                                 <!-- Select From -->
                                 <label class="fw-bold mt-3">Select Studio Hours<span class="text-danger">
@@ -172,7 +182,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="From" class="fw-bold">From</label>
-                                        <ng-select placeholder="From" id="From">
+                                        <ng-select placeholder="From" id="From" formControlName="fromHour">
                                             <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                                 }}</ng-option>
                                         </ng-select>
@@ -183,7 +193,7 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
-                                        <ng-select placeholder="To" id="To">
+                                        <ng-select placeholder="To" id="To" formControlName="toHour">
                                             <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
                                                 }}</ng-option>
                                         </ng-select>
@@ -191,12 +201,17 @@
                                 </div>
                                 <!-- End to -->
                             </div>
+                        </fieldset>
                         </div>
+                        
                     </div>
                     <!-- End Four -->
                     <!-- checkbox -->
+                    <fieldset formGroupName="studioServices">
                     <div class="row">
                         <div class="col-12 sn-col-8">
+                            <label for="state" class="fw-bold mt-3">Select Studio Services <span class="text-danger">
+                                *</span></label>
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="" id="RecordingRoom"
@@ -207,7 +222,7 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <input type="text" class="form-control ms-4" placeholder="Enter Amount"
-                                        [ngClass]="checkValueArray[0] ? 'd-block' : 'd-none'" />
+                                        [ngClass]="checkValueArray[0] ? 'd-block' : 'd-none'"  formControlName="recordingAmount"/>
                                 </div>
                             </div>
 
@@ -221,7 +236,7 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <input type="text" class="form-control ms-4" placeholder="Enter Amount"
-                                        [ngClass]="checkValueArray[1] ? 'd-block' : 'd-none'" />
+                                        [ngClass]="checkValueArray[1] ? 'd-block' : 'd-none'" formControlName="jammingAmount"/>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
@@ -234,11 +249,12 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <input type="text" class="form-control ms-4" placeholder="Enter Amount"
-                                        [ngClass]="checkValueArray[2] ? 'd-block' : 'd-none'" />
+                                        [ngClass]="checkValueArray[2] ? 'd-block' : 'd-none'" formControlName="MasteringAmount"/>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </fieldset>
                     <!-- submit and Cancel button -->
                     <div class="button my-2 my-lg-5 d-flex justify-content-end mt-5 sm-mt-0">
                         <button type="button" class="btn btn-outline-info me-3">

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { BookingHistoryComponent } from './booking-history/booking-history.component';
 import { RouterModule } from '@angular/router';
-import { NgSelectModule } from '@ng-select/ng-select';
+import { LocationService } from './services/location.service';
+
 
 
 
@@ -16,6 +17,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CommonModule,
     RouterModule,
   ],
-  exports: [CardComponent]
+  exports: [CardComponent],
+  providers:[LocationService]
 })
 export class SharedModule { }

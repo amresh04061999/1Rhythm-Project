@@ -12,6 +12,7 @@ import { OverlayService } from './services/overlay/overlay.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './services/auth/auth.guard';
 import { AuthInterceptor } from './services/interceptor/auth.interceptor';
+import { HttpService } from './services/http/http.service';
 @NgModule({
   declarations: [
     MasterComponent,
@@ -26,7 +27,7 @@ import { AuthInterceptor } from './services/interceptor/auth.interceptor';
     HttpClientModule
   ],
   exports: [LoaderComponent,],
-  providers: [AuthService, LoaderService, OverlayService, AuthGuard,
+  providers: [AuthService, LoaderService, OverlayService, AuthGuard,HttpService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })

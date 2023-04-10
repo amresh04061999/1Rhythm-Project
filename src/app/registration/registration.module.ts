@@ -6,7 +6,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
-import { LocationService } from './services/location.service';
+
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -18,8 +19,9 @@ import { LocationService } from './services/location.service';
     RegistrationRoutingModule,
     NgSelectModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
-  providers:[UserService,LocationService]
+  providers:[UserService,]
 })
 export class RegistrationModule { }
