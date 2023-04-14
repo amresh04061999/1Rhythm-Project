@@ -32,7 +32,7 @@
                                     <div class="action-btn">
                                         <span class="icon-delete-white fs-3" (click)="removeImage(i)"></span>
                                         <label for="coverImage{{i}}">
-                                            <span class="icon-suit-heart text-white fs-3 ms-2"></span>
+                                            <span class="icon-suit-heart text-white fs-3 ms-2"  (click)="setFavImage(i)"></span>
                                         </label> 
                                         </div>
                                     </div>
@@ -100,9 +100,10 @@
                             <div class="form-group mt-3">
                                 <label for="Country" class="fw-bold">Select Country<span class="text-danger">
                                         *</span></label>
-                                <ng-select placeholder="india" formControlName="country">
-                                    <ng-option *ngFor="let user of userTypes" [value]="user.id">{{
-                                        user.name
+                                <ng-select placeholder="india" formControlName="countryId" (change)=" changeState($event)">
+                                    <ng-option disabled value="">Select Country</ng-option>
+                                    <ng-option *ngFor="let country of getCountry" [value]="country.countryId">{{
+                                        country.countryName
                                         }}</ng-option>
                                 </ng-select>
                             </div>
@@ -114,8 +115,9 @@
                                 <div class="form-group mt-3">
                                     <label for="state" class="fw-bold">Select State<span class="text-danger">
                                             *</span></label>
-                                    <ng-select placeholder="Select State" formControlName="state">
-                                        <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
+                                    <ng-select placeholder="Select State" formControlName="stateId" (change)=" changeCity($event)">
+                                        <ng-option disabled value="">Select State</ng-option>
+                                        <ng-option *ngFor="let state of getStates" [value]="state.stateId">{{ state.stateName
                                             }}</ng-option>
                                     </ng-select>
                                 </div>
@@ -128,8 +130,9 @@
                                 <div class="form-group mt-3">
                                     <label for="City" class="fw-bold">Select City<span class="text-danger">
                                             *</span></label>
-                                    <ng-select placeholder="Select City"formControlName=city>
-                                        <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
+                                    <ng-select placeholder="Select City"formControlName=cityId>
+                                        <ng-option disabled value="">Select City</ng-option>
+                                        <ng-option *ngFor="let city of getCities" [value]="city.cityId">{{ city.cityName
                                             }}</ng-option>
                                     </ng-select>
                                 </div>
@@ -151,8 +154,9 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="form-group mt-3">
                                         <label for="From" class="fw-bold">From</label>
-                                        <ng-select placeholder="From" id="From" formControlName="fromDay">
-                                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
+                                        <ng-select placeholder="From" id="From" formControlName="fromDay" (change)="weekChange($event)">
+                                            <ng-option disabled value="">Select From</ng-option>
+                                            <ng-option *ngFor="let day of days" [value]="day.day">{{ day.day
                                                 }}</ng-option>
                                         </ng-select>
                                     </div>
@@ -163,8 +167,9 @@
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
                                         <ng-select placeholder="To" id="To" formControlName="toDay">
-                                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
-                                                }}</ng-option>
+                                            <ng-option disabled value="">Select To</ng-option>
+                                            <ng-option *ngFor="let day of days" [value]="day.day">{{ day.day
+                                            }}</ng-option>
                                         </ng-select>
                                     </div>
                                 </div>
@@ -183,8 +188,9 @@
                                     <div class="form-group mt-3">
                                         <label for="From" class="fw-bold">From</label>
                                         <ng-select placeholder="From" id="From" formControlName="fromHour">
-                                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
-                                                }}</ng-option>
+                                            <ng-option disabled value="">Select From</ng-option>
+                                            <ng-option *ngFor="let hour of hours" [value]="hour.hour">{{ hour.hour
+                                            }}</ng-option>
                                         </ng-select>
                                     </div>
                                 </div>
@@ -194,7 +200,8 @@
                                     <div class="form-group mt-3">
                                         <label for="To" class="fw-bold">To</label>
                                         <ng-select placeholder="To" id="To" formControlName="toHour">
-                                            <ng-option *ngFor="let user of userTypes" [value]="user.id">{{ user.name
+                                            <ng-option disabled value="">Select To</ng-option>
+                                            <ng-option *ngFor="let hour of hours" [value]="hour.hour">{{ hour.hour
                                                 }}</ng-option>
                                         </ng-select>
                                     </div>
@@ -214,7 +221,7 @@
                                 *</span></label>
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="RecordingRoom"
+                                    <input class="form-check-input" type="checkbox" value="" id="RecordingRoom" value="RecordingRoom" formControlName="serviceTitle"
                                         #RecordingRoom (change)="checkBox(RecordingRoom.id)" />
                                     <label class="form-check-label" for="RecordingRoom">
                                         Recording Room
@@ -228,7 +235,7 @@
 
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox"  #JammingRoom id="JammingRoom"
+                                    <input class="form-check-input" type="checkbox"  #JammingRoom id="JammingRoom" value="JammingRoom" formControlName="serviceTitle"
                                         (change)="checkBox(JammingRoom.id)" />
                                     <label class="form-check-label" for="JammingRoom">
                                         Jamming Room
@@ -241,7 +248,7 @@
                             </div>
                             <div class="d-flex align-items-center">
                                 <div class="form-check mt-2">
-                                    <input class="form-check-input" type="checkbox" #Mixing id="Mixing"
+                                    <input class="form-check-input" type="checkbox" value="Mixing and Mastering Room" formControlName="serviceTitle"  #Mixing id="Mixing"
                                         (change)="checkBox(Mixing.id)" />
                                     <label class="form-check-label" for="Mixing">
                                         Mixing and Mastering Room
