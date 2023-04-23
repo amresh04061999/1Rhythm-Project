@@ -8,7 +8,7 @@
       <span class="text-uppercase fw-bold mb-5">welcome</span>
       <h3 class="my-2 my-sm-3 fw-bold">Login to Your Account</h3>
       <span class="mb-4 fs-7">Create an Account?
-        <a href="" class="text-decoration-none fw-bold" routerLink="/ragistration">Sign Up</a>
+        <a href="" class="text-decoration-none fw-bold cursor-pointer" routerLink="/registration">Sign Up</a>
       </span>
       <!-- Start Form  -->
       <form [formGroup]="userLogin" (ngSubmit)="login()">
@@ -18,17 +18,17 @@
             <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [ngClass]="{
                 'border-danger':
                   validator['email'].invalid &&
-                  (isSubmited || validator['email'].touched)
+                  (isSubmitted || validator['email'].touched)
               }" />
           </div>
           <div *ngIf="
               validator['email'].invalid &&
-              (isSubmited ||
+              (isSubmitted ||
                 validator['email'].dirty ||
                 validator['email'].touched)
             ">
             <span class="text-danger fs-8" *ngIf="validator['email'].errors?.['required']">This field is required</span>
-            <span *ngIf="validator['email'].errors?.['pattern'] && (isSubmited || validator['email'].touched)"
+            <span *ngIf="validator['email'].errors?.['pattern'] && (isSubmitted || validator['email'].touched)"
               class="text-danger fs-8">
               User does not exist</span>
           </div>
@@ -41,12 +41,12 @@
               [ngClass]="{
                 'border-danger':
                   validator['password'].invalid &&
-                  (isSubmited || validator['password'].touched)
+                  (isSubmitted || validator['password'].touched)
               }" />
           </div>
           <div *ngIf="
               validator['password'].invalid &&
-              (isSubmited ||
+              (isSubmitted ||
                 validator['password'].dirty ||
                 validator['password'].touched)
             ">

@@ -10,7 +10,7 @@ export class OverlayService{
   /**
    * Open a custom component in an overlay
    */
-  open<T>(component: ComponentType<T>,istrue:boolean) {
+  open<T>(component: ComponentType<T>,isTrue:boolean) {
     // Globally centered position strategy
     const positionStrategy = this.overlay
     .position()
@@ -19,7 +19,7 @@ export class OverlayService{
     this.overlayRef = this.overlay.create({
       positionStrategy,
       hasBackdrop: true,
-      backdropClass: istrue ? 'overlay-backdrop':'' ,
+      backdropClass: isTrue ? 'overlay-backdrop':'' ,
     });
     const portal = new ComponentPortal(component);
     const instance = this.overlayRef.attach(portal);

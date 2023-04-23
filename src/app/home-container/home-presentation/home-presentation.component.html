@@ -6,7 +6,7 @@
             <ngb-carousel class="col carousel-wrapper overflow-hidden" [showNavigationArrows]="false" [interval]="6000">
                 <!-- Displaying dynamic data using iteration -->
                 <ng-template ngbSlide>
-                    <!-- Adding background image of caousel -->
+                    <!-- Adding background image of Carousel -->
                     <div class="picsum-img-wrapper position-relative">
                         <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash 1.svg"
                             class="h-100 w-100" />
@@ -32,7 +32,7 @@
                 </ng-template>
                 <!-- Displaying dynamic data using iteration -->
                 <ng-template ngbSlide>
-                    <!-- Adding background image of caousel -->
+                    <!-- Adding background image of Carousel -->
                     <div class="picsum-img-wrapper position-relative">
                         <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-2.svg"
                             class="h-100 w-100" />
@@ -58,7 +58,7 @@
                 </ng-template>
                 <!-- Displaying dynamic data using iteration -->
                 <ng-template ngbSlide>
-                    <!-- Adding background image of caousel -->
+                    <!-- Adding background image of Carousel -->
                     <div class="picsum-img-wrapper position-relative">
                         <img src="./../../../assets/images/jesman-fabio-1zwJqd5cNys-unsplash-3.svg"
                             class="h-100 w-100" />
@@ -88,7 +88,7 @@
     </div>
     <!-- end  Carousel Container -->
     <!-- studio -->
-    <div class="studio-wrapper mt-5" [ngClass]="getSingleUser.userRoll === 'Artist'?'d-none':'d-block'">
+    <div class="studio-wrapper mt-5" [ngClass]="getUser.userRoll === 'Studio Owner'?'d-none':'d-block'">
         <!-- container -->
         <div class="container h-100 d-flex flex-column">
             <!-- header section -->
@@ -107,8 +107,8 @@
         </div>
     </div>
     <!-- end -->
-    <!-- artrist -->
-    <div class="artist-wrapper mt-5" [ngClass]="getSingleUser.userRoll === 'Studio Owner'?'d-none':'d-block'">
+    <!-- artist -->
+    <div class="artist-wrapper mt-5" [ngClass]="getUser.userRoll === 'Artist'?'d-none':'d-block'">
         <!-- container -->
         <div class="container h-100 d-flex flex-column">
             <!-- header section -->
@@ -126,5 +126,5 @@
             </div>
         </div>
     </div>
-    <!--End artrist -->
+    <!--End artist -->
 </main>

@@ -22,8 +22,8 @@ export class State {
 export class City {
   public cityId: number;
   public cityName: string;
-  public stateId:string;
-  constructor(id: number, cityName: string,stateId:string) {
+  public stateId:number;
+  constructor(id: number, cityName: string,stateId:number) {
     this.cityId = -id;
     this.cityName = cityName;
     this.stateId=stateId;

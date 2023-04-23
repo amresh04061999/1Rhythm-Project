@@ -4,7 +4,7 @@
     <!-- right section Wrapper -->
     <div class="registration-form-wrapper  bg-white rounded p-3 p-lg-5 ">
         <h3 class="fw-bold">Create Your Account</h3>
-        <span class="mt-2 fs-7">Already Have a Account? <a href="" class="text-decoration-none fw-bold"> Sign
+        <span class="mt-2 fs-7">Already Have a Account? <a href="" class="text-decoration-none fw-bold cursor-pointer"> Sign
                 In</a></span>
         <!-- Registration from  -->
         <form [formGroup]="users" (ngSubmit)="registration()">
@@ -34,11 +34,11 @@
                                 *</span></label>
                         <input type="text" class="form-control" id="FirstName" placeholder="First Name"
                             formControlName="firstName"
-                            [ngClass]="{'border-danger':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['firstName'].invalid && (validator['firstName'].touched ||isSubmitted)}">
                     </div>
                     <!-- Validation For firstName  -->
                     <div
-                        *ngIf="validator['firstName'].invalid && (isSubmited || validator['firstName'].touched||validator['firstName'].dirty)">
+                        *ngIf="validator['firstName'].invalid && (isSubmitted || validator['firstName'].touched||validator['firstName'].dirty)">
                         <span class="text-danger fs-8" *ngIf="validator['firstName'].errors?.['required']">This
                             Field
                             Is
@@ -53,17 +53,17 @@
                     </div>
                 </div>
                 <!-- End  FirstName -->
-                <!-- Lastname -->
+                <!-- LastName -->
                 <div class="col-12  col-sm-6">
                     <div class="form-group mt-3">
                         <label for="LastName" class="fw-bold ">Last Name <span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="LastName" placeholder="Last Name"
                             formControlName="lastName"
-                            [ngClass]="{'border-danger':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['lastName'].invalid && (validator['lastName'].touched ||isSubmitted)}">
                     </div>
                     <!-- Validation for lastName -->
                     <div
-                        *ngIf="validator['lastName'].invalid && (isSubmited  || validator['lastName'].touched ||validator['lastName'].dirty)">
+                        *ngIf="validator['lastName'].invalid && (isSubmitted  || validator['lastName'].touched ||validator['lastName'].dirty)">
                         <span class="text-danger fs-8" *ngIf="validator['lastName'].errors?.['required']"> This
                             Field Is
                             Required</span>
@@ -87,11 +87,11 @@
                         <label for="EmailID" class="fw-bold ">Email Id<span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="EmailID" placeholder="Email ID"
                             formControlName="email"
-                            [ngClass]="{'border-danger':validator['email'].invalid && (validator['email'].touched||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['email'].invalid && (validator['email'].touched||isSubmitted)}">
                     </div>
                     <!-- validation for email  -->
                     <div
-                        *ngIf="validator['email'].invalid && (isSubmited || validator['email'].touched ||validator['email'].dirty)">
+                        *ngIf="validator['email'].invalid && (isSubmitted || validator['email'].touched ||validator['email'].dirty)">
                         <span class="text-danger fs-8" *ngIf="validator['email'].errors?.['required']">This Field Is
                             Required</span>
                         <span class="text-danger fs-8"
@@ -112,11 +112,11 @@
                         <label for="Password" class="fw-bold ">Password <span class="text-danger"> *</span></label>
                         <input type="text" class="form-control" id="Password" placeholder="Password"
                             formControlName="password"
-                            [ngClass]="{'border-danger':validator['password'].invalid && (validator['password'].touched||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['password'].invalid && (validator['password'].touched||isSubmitted)}">
                     </div>
                     <!-- password validation -->
                     <div
-                        *ngIf="validator['password'].invalid && (isSubmited || validator['password'].touched ||validator['password'].dirty)">
+                        *ngIf="validator['password'].invalid && (isSubmitted || validator['password'].touched ||validator['password'].dirty)">
                         <span class="text-danger fs-8" *ngIf="validator['password'].errors?.['required']">This Field
                             Is
                             Required</span>
@@ -145,11 +145,11 @@
                                 *</span></label>
                         <input type="text" class="form-control" id="PhoneNumber" placeholder="Phone Number"
                             formControlName="phoneNumber"
-                            [ngClass]="{'border-danger':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['phoneNumber'].invalid && (validator['phoneNumber'].touched||isSubmitted)}">
                     </div>
                     <!-- validation for phoneNumber number  -->
                     <div
-                        *ngIf="validator['phoneNumber'].invalid && (isSubmited || validator['phoneNumber'].touched||validator['phoneNumber'].dirty )">
+                        *ngIf="validator['phoneNumber'].invalid && (isSubmitted || validator['phoneNumber'].touched||validator['phoneNumber'].dirty )">
                         <span class="text-danger fs-8" *ngIf="validator['phoneNumber'].errors?.['required']"> This
                             Field
                             Is
@@ -170,15 +170,15 @@
                         <label for="Password" class="fw-bold ">Select User Type <span class="text-danger">
                                 *</span></label>
                         <ng-select formControlName="userRoll" (change)="changeUserType($event)"
-                            [ngClass]="{'border-danger':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['userRoll'].invalid && (validator['userRoll'].touched||isSubmitted)}">
                             <ng-option value="" disabled>Select userType</ng-option>
                             <ng-option *ngFor="let user of userTypeList"
-                                [value]="user.usertype">{{user.usertype}}</ng-option>
+                                [value]="user.id">{{user.userType}}</ng-option>
                         </ng-select>
                     </div>
                     <!-- validation for select user -->
                     <div
-                        *ngIf="validator['userRoll'].invalid && (isSubmited || validator['userRoll'].touched ||validator['userRoll'].dirty )">
+                        *ngIf="validator['userRoll'].invalid && (isSubmitted || validator['userRoll'].touched ||validator['userRoll'].dirty )">
                         <span class="text-danger fs-7" *ngIf="validator['userRoll'].errors?.['required']"> This
                             Field Is
                             Required</span>
@@ -196,14 +196,14 @@
                         <label for="Country" class="fw-bold ">Select Country<span class="text-danger">
                                 *</span></label>
                         <ng-select formControlName="countryId" (change)="changeCountry($event)"
-                            [ngClass]="{'border-danger':validator['countryId'].invalid && (validator['countryId'].touched||isSubmited)}">
+                            [ngClass]="{'border-danger':validator['countryId'].invalid && (validator['countryId'].touched||isSubmitted)}">
                             <ng-option value="" disabled>Select Country</ng-option>
                             <ng-option *ngFor="let user of countryList"
                                 [value]="user.countryId">{{user.countryName}}</ng-option>
                         </ng-select>
                     </div>
                     <div
-                        *ngIf="validator['countryId'].invalid && (isSubmited || validator['countryId'].touched ||validator['countryId'].dirty)">
+                        *ngIf="validator['countryId'].invalid && (isSubmitted || validator['countryId'].touched ||validator['countryId'].dirty)">
                         <span class="text-danger fs-8" *ngIf="validator['countryId'].errors?.['required']"> This Field
                             Is
                             Required</span>
@@ -217,15 +217,15 @@
                             <label for="state" class="fw-bold ">Select State<span class="text-danger">
                                     *</span></label>
                             <ng-select formControlName="stateId" (change)="changeState($event)"
-                                [ngClass]="{'border-danger':validator['stateId'].invalid && (validator['stateId'].touched||isSubmited)}">
+                                [ngClass]="{'border-danger':validator['stateId'].invalid && (validator['stateId'].touched||isSubmitted)}">
                                 <ng-option value="" disabled>Select State</ng-option>
                                 <ng-option *ngFor="let user of stateList"
                                     [value]="user.stateId">{{user.stateName}}</ng-option>
                             </ng-select>
 
-                            <!-- validation for select state @author amresh prasad -->
+                            <!-- validation for select state -->
                             <div
-                                *ngIf="validator['stateId'].invalid && (isSubmited || validator['stateId'].touched||validator['stateId'].dirty )">
+                                *ngIf="validator['stateId'].invalid && (isSubmitted || validator['stateId'].touched||validator['stateId'].dirty )">
                                 <span class="text-danger fs-8" *ngIf="validator['stateId'].errors?.['required']"> This
                                     Field
                                     Is
@@ -242,7 +242,7 @@
                             <label for="City" class="fw-bold ">Select City<span class="text-danger">
                                     *</span></label>
                             <ng-select formControlName="cityId"
-                                [ngClass]="{'border-danger':validator['cityId'].invalid && (validator['cityId'].touched||isSubmited)}">
+                                [ngClass]="{'border-danger':validator['cityId'].invalid && (validator['cityId'].touched||isSubmitted)}">
                                 <ng-option value="" disabled>Select City</ng-option>
                                 <ng-option *ngFor="let user of cityList"
                                     [value]="user.cityId">{{user.cityName}}</ng-option>
@@ -251,7 +251,7 @@
                     </div>
                     <!-- validation for Select city -->
                     <div
-                        *ngIf="validator['cityId'].invalid && (isSubmited || validator['cityId'].touched||validator['cityId'].dirty )">
+                        *ngIf="validator['cityId'].invalid && (isSubmitted || validator['cityId'].touched||validator['cityId'].dirty )">
                         <span class="text-danger fs-8" *ngIf="validator['cityId'].errors?.['required']"> This Field Is
                             Required</span>
                     </div>

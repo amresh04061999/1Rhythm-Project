@@ -12,43 +12,47 @@ import { ProfileMenuComponent } from '../profile-menu/profile-menu.component';
 export class HeaderComponent implements OnInit {
   public isOpen: boolean;
   public isDown: boolean;
-  public getSingleUser: any;
-  constructor(private _overlaySevices: OverlayService, private _userService: AuthService, private router: Router) {
+  public getUser: any;
+  constructor(private _overlayService: OverlayService, private _userService: AuthService, private router: Router) {
     this.isDown = false;
     this.isOpen = true;
   }
   ngOnInit(): void {
-    this.getSingleusers();
+    this.getSingleUsers();
   }
   /**
-   * 
+   * menu icon change open and close
    */
   public open(): void {
     this.isOpen = !this.isOpen;
   }
   /**
-   * Open Dropdown in Mobile header
+   * show and hide  details in mobile header section
    */
-  public opendown(): void {
+  public upDowArrow(): void {
     this.isDown = !this.isDown;
   }
   /**
    * Open Profile Menu
    */
   public OpenProfileMenu(): void {
-    this._overlaySevices.open(ProfileMenuComponent, false);
+    this._overlayService.open(ProfileMenuComponent, false);
   }
   /**
-   * logout 
+   * logout user and redirect login
    */
   public logOut() {
     this._userService.logout();
     this.router.navigateByUrl('/login')
   }
 
-  public getSingleusers() {
-    this.getSingleUser = this._userService.userget();
-    this.getSingleUser = JSON.parse(this.getSingleUser)
+  /**
+ *  get user Details in  AuthService 
+ * 
+ */
+  public getSingleUsers() {
+    this.getUser = this._userService.getLoginData();
+    this.getUser = JSON.parse(this.getUser)
 
 
   }

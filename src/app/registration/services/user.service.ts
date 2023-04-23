@@ -18,7 +18,11 @@ export class UserService {
   getUserType():Observable<UserType[]>{
     return this._httpClient.get<UserType[]>(`${this.baseUrl}userType`)
   }
-  adduser(user:Users):Observable<Users>{
+   /**
+   * Add user Details database
+   * @returns 
+   */
+  addUser(user:Users):Observable<Users>{
     return this._httpClient.post<Users>(`${this.baseUrl}users`,user);
   }
 }

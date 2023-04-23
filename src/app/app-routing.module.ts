@@ -9,7 +9,8 @@ import { BookingHistoryComponent } from './shared/booking-history/booking-histor
 
 const routes: Routes = [
   {
-    path: '', component: MasterComponent,
+    path: '',
+    component: MasterComponent,
     canActivate: [AuthGuard],
     children: [
       {
@@ -18,32 +19,50 @@ const routes: Routes = [
         redirectTo: 'home',
       },
       {
-        path: 'home', component: HomeContainerComponent
+        path: 'home',
+        component: HomeContainerComponent,
       },
       {
-        path: 'manage-profile', component: ManageProfileContainerComponent
+        path: 'manage-profile',
+        component: ManageProfileContainerComponent,
       },
       {
-        path: 'booking-history', component: BookingHistoryComponent
+        path: 'booking-history',
+        component: BookingHistoryComponent,
       },
-      { path: 'artist', loadChildren: () => import('./artist/artist.module').then(m => m.ArtistModule) },
-      { path: 'studio', loadChildren: () => import('./studio/studio.module').then(m => m.StudioModule) }
-    ]
+      {
+        path: 'artist',
+        loadChildren: () =>
+          import('./artist/artist.module').then((m) => m.ArtistModule),
+      },
+      {
+        path: 'studio',
+        loadChildren: () =>
+          import('./studio/studio.module').then((m) => m.StudioModule),
+      },
+    ],
   },
-
-
-  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-  { path: 'ragistration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) },
 
   {
-    path: '**', component: PageNotFoundComponent
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
   },
-
-
+  {
+    path: 'registration',
+    loadChildren: () =>
+      import('./registration/registration.module').then(
+        (m) => m.RegistrationModule
+      ),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

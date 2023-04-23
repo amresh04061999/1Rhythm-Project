@@ -7,16 +7,19 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./home-presentation.component.scss']
 })
 export class HomePresentationComponent implements OnInit {
-  public getSingleUser: any;
+  public getUser: any;
   constructor(private _userService: AuthService,) {
   }
   ngOnInit(): void {
-    this.getSingleusers()
+    this.getSingleUsers()
   }
-
-  public getSingleusers() {
-    this.getSingleUser = this._userService.userget();
-    this.getSingleUser = JSON.parse(this.getSingleUser)
+/**
+ *  get user Details in  AuthService 
+ * 
+ */
+  public getSingleUsers() {
+    this.getUser = this._userService.getLoginData();
+    this.getUser = JSON.parse(this.getUser)
   }
 
 }
